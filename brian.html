@@ -40,6 +40,13 @@
       color: var(--accent);
     }
 
+    header .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
     header .date {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -74,21 +81,7 @@
       font-weight: 600;
       line-height: 1.4;
       margin-bottom: 0.6rem;
-    }
-
-    .post h2 a {
       color: var(--text);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .post h2 a:hover { color: var(--accent); }
-
-    .source {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
     }
 
     .summary {
@@ -97,7 +90,7 @@
       margin-bottom: 1rem;
     }
 
-    .crossover {
+    .verdict {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 0.82rem;
       color: var(--accent);
@@ -124,59 +117,11 @@
       border-radius: 3px;
     }
 
-    .links {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.8rem;
-      margin-top: 0.8rem;
-    }
-
-    .links a {
-      color: var(--accent-dim);
-      text-decoration: none;
-      margin-right: 1rem;
-      transition: color 0.15s;
-    }
-
-    .links a:hover { color: var(--accent); }
-    .links a::before { content: "\2192\00a0"; }
-
-    .joke-text {
-      font-size: 1.05rem;
-      color: #ccc;
-      font-style: italic;
-      line-height: 1.6;
-    }
-
-    .discuss-text {
-      font-size: 1.05rem;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .discuss-context {
+    .difficulty {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 0.78rem;
       color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
-
-    .candy-name {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .candy-name a {
-      color: var(--text);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .candy-name a:hover { color: var(--accent); }
-
-    .candy-desc {
-      font-size: 0.9rem;
-      color: #bbb;
+      margin-top: 0.6rem;
     }
 
     footer {
@@ -198,436 +143,248 @@
 <body>
 
 <header>
-  <h1>Feed / Brian</h1>
+  <h1>The Trolley Problem Omnibus</h1>
+  <div class="subtitle">A curated feed for Brian</div>
   <div class="date">May 22, 2026</div>
 </header>
 
 <main class="feed">
 
-  <!-- 1. Psilocybin brain rewiring -->
   <article class="post">
-    <div class="post-type">paper &rarr; social</div>
-    <h2><a href="https://www.ucsf.edu/news/2026/05/431866/one-dose-psilocybin-changes-human-brain" target="_blank" rel="noopener">A Single Dose of Psilocybin Physically Rewires the Brain, and the Changes Last a Month</a></h2>
-    <div class="source">UCSF / Nature Communications, May 2026</div>
-    <p class="summary">Researchers gave 28 psychedelic-naive volunteers one 25mg dose. Within 60 minutes, EEG showed dramatically higher brain entropy. A month later, DTI scans showed their neural tracts were physically denser with more structural integrity. The degree of entropy during the experience predicted how much insight and well-being each person reported weeks later.</p>
-    <p class="crossover">Every r/psychonaut post saying "I took mushrooms once and it changed my brain" was dismissed as hippie talk until neuroscientists at Penn and UCSF found the literal synaptic rewiring that explains it.</p>
+    <div class="post-type">classic variant</div>
+    <h2>The Trolley Is Heading Toward Five People, but the One Person on the Other Track Owes You $400</h2>
+    <p class="summary">Standard setup. Five strangers on the main track. One person on the side track who borrowed $400 from you at a wedding two years ago and has never once brought it up. You have reason to believe he has the money. He just bought a boat.</p>
+    <p class="verdict">Pulling the lever saves five lives but you will never see that $400. Refusing to pull the lever is obviously monstrous, but you'd have $400.</p>
     <div class="tags">
-      <span class="tag">psychedelics</span>
-      <span class="tag">neuroscience</span>
-      <span class="tag">wire crossing</span>
+      <span class="tag">utilitarian</span>
+      <span class="tag">personal finance</span>
     </div>
-    <div class="links">
-      <a href="https://www.ucsf.edu/news/2026/05/431866/one-dose-psilocybin-changes-human-brain" target="_blank" rel="noopener">UCSF</a>
-      <a href="https://scitechdaily.com/scientists-discover-that-a-single-dose-of-psilocybin-changes-the-human-brain/" target="_blank" rel="noopener">SciTechDaily</a>
-    </div>
+    <div class="difficulty">Difficulty: Medium (emotionally hard, mathematically easy)</div>
   </article>
 
-  <!-- joke break -->
   <article class="post">
-    <div class="post-type">joke</div>
-    <p class="joke-text">"I told my boss I needed a raise because three companies were after me. He asked which ones. I said, 'The electric company, the gas company, and the internet provider.'"</p>
-  </article>
-
-  <!-- 2. NPC meme meets anendophasia -->
-  <article class="post">
-    <div class="post-type">4chan &rarr; paper</div>
-    <h2><a href="https://journals.sagepub.com/doi/10.1177/09567976251335583" target="_blank" rel="noopener">The NPC Meme Turns Out to Be Pointing at a Real Neurological Phenomenon</a></h2>
-    <div class="source">Psychological Science / Know Your Meme, 2024-2025</div>
-    <p class="summary">In 2018, 4chan's /v/ board spawned the NPC Wojak meme based on the premise that some people literally lack an inner monologue. The meme went viral, got people banned from Twitter, and generated NYT coverage. Then Nedergaard and Lupyan published research coining the term "anendophasia" (lack of inner speech), presenting evidence that inner speech frequency genuinely varies dramatically across adults. People with low inner speech performed measurably worse on verbal working memory tasks. The researchers explicitly referenced a Reddit thread where users denied having any inner voice at all.</p>
-    <p class="crossover">4chan made a meme dehumanizing people who "don't think"; six years later, neuroscientists confirmed some people genuinely lack inner speech, then had to spend the rest of the paper explaining why those people aren't actually NPCs.</p>
+    <div class="post-type">modern</div>
+    <h2>The Trolley Is a Software Update and You Already Clicked "Remind Me Tomorrow" 136 Times</h2>
+    <p class="summary">A self-driving trolley is heading toward five pedestrians. You can stop it by installing a firmware update that has been pending for seven months. The update requires restarting the trolley, which takes 45 minutes. You technically agreed to install it "tomorrow" 136 consecutive days ago. The update also changes the UI for no reason.</p>
+    <p class="verdict">The utilitarian calculus is clear, but the update also installs a new terms of service that is 74 pages long, and by clicking "agree" you may be granting the trolley company the right to use your likeness in advertising.</p>
     <div class="tags">
-      <span class="tag">consciousness</span>
-      <span class="tag">memes</span>
-      <span class="tag">wire crossing</span>
+      <span class="tag">technology</span>
+      <span class="tag">consent</span>
+      <span class="tag">UX</span>
     </div>
-    <div class="links">
-      <a href="https://journals.sagepub.com/doi/10.1177/09567976251335583" target="_blank" rel="noopener">Paper</a>
-      <a href="https://knowyourmeme.com/memes/npc-wojak" target="_blank" rel="noopener">Know Your Meme</a>
-    </div>
+    <div class="difficulty">Difficulty: Low (but the update will restart your trolley three times)</div>
   </article>
 
-  <!-- candy -->
   <article class="post">
-    <div class="post-type">candy</div>
-    <h3 class="candy-name"><a href="https://www.theomnicosm.com/m-ms-popd-are-the-greatest-freeze-dried-candy-ive-ever-eaten/" target="_blank" rel="noopener">M&amp;M's POP'd Caramel (Freeze-Dried)</a></h3>
-    <p class="candy-desc">The first freeze-dried candy from M&amp;M's. Light, crispy, airy, with grainy centers that dissolve in your mouth. Reviewers say Mars got the format right on the first try, and caramel was the perfect flavor to freeze-dry.</p>
-  </article>
-
-  <!-- 3. Dead Internet Theory validated -->
-  <article class="post">
-    <div class="post-type">4chan &rarr; Stanford</div>
-    <h2><a href="https://www.fastcompany.com/91535495/dead-internet-theory-coming-true-new-research-stanford-calculates-where-we-are" target="_blank" rel="noopener">Dead Internet Theory: 4chan Conspiracy Partially Validated by Stanford</a></h2>
-    <div class="source">Stanford / Imperial College / Fast Company, 2025</div>
-    <p class="summary">The "Dead Internet Theory" originated on 4chan and Wizardchan around 2020-2021, claiming most internet content was already bot-generated. In 2025, researchers from Stanford and Imperial College found 35.3% of all new websites are AI-generated, with 17.6% entirely AI. A separate report found bots now account for 51% of all global web traffic, the first time automated activity outnumbered humans.</p>
-    <p class="crossover">Anonymous posters on the most disreputable corners of the internet diagnosed a civilizational shift that Stanford researchers later quantified; the conspiracy theorists were, if anything, conservative in their estimates.</p>
+    <div class="post-type">existential</div>
+    <h2>There Is No One on Either Track but You Still Feel Guilty</h2>
+    <p class="summary">The trolley is heading down an empty track. Both tracks are empty. No one is in danger. You are standing next to the lever. You did not build the trolley. You did not lay the tracks. You have no connection to any of this. And yet.</p>
+    <p class="verdict">You will think about this trolley in the shower for the next eleven years.</p>
     <div class="tags">
-      <span class="tag">AI</span>
-      <span class="tag">internet culture</span>
-      <span class="tag">wire crossing</span>
+      <span class="tag">anxiety</span>
+      <span class="tag">catholic guilt</span>
     </div>
-    <div class="links">
-      <a href="https://www.fastcompany.com/91535495/dead-internet-theory-coming-true-new-research-stanford-calculates-where-we-are" target="_blank" rel="noopener">Fast Company</a>
-      <a href="https://www.cnbc.com/2026/03/26/ai-bots-humans-internet.html" target="_blank" rel="noopener">CNBC</a>
-    </div>
+    <div class="difficulty">Difficulty: N/A (there is no correct answer because there is no question)</div>
   </article>
 
-  <!-- discuss -->
   <article class="post">
-    <div class="post-type">discuss</div>
-    <p class="discuss-text">Would you rather live in a reality entirely of your own making but stay completely isolated, or live in a shared, uncertain reality full of connection and unpredictability?</p>
-    <p class="discuss-context">consciousness / philosophy</p>
-  </article>
-
-  <!-- 4. Koch loses bet, internet philosophy wins -->
-  <article class="post">
-    <div class="post-type">bet &rarr; meme &rarr; paper</div>
-    <h2><a href="https://www.sciencedaily.com/releases/2026/04/260406192809.htm" target="_blank" rel="noopener">Christof Koch: "The Brain Might Not Create Consciousness After All"</a></h2>
-    <div class="source">BIAL Foundation / ScienceDaily, April 2026</div>
-    <p class="summary">In 1998, Koch bet David Chalmers that the neural basis of consciousness would be identified by 2023. Koch lost. He delivered a case of wine. Then in April 2026, Koch argued consciousness is an intrinsic property of complex integrated systems, not a product of the brain. He outlined three areas where materialist models fail, including the persistence of mystical experiences that resist explanation.</p>
-    <p class="crossover">The world's most famous consciousness researcher lost a public bet, then pivoted to a position that internet philosophy memers had been advocating for years: maybe consciousness isn't produced by brains at all.</p>
+    <div class="post-type">corporate</div>
+    <h2>The Trolley Is Heading Toward Five People but Diverting It Would Require Filling Out a Change Request Form</h2>
+    <p class="summary">You can save five lives by pulling the lever. However, pulling the lever constitutes an unauthorized modification to trolley routing infrastructure, which requires a Change Request Form (TRL-7B), sign-off from two department heads, a risk assessment, and a 5-business-day review period. It is currently Friday at 4:47 PM. Dave from Compliance is already in his car.</p>
+    <p class="verdict">You could pull the lever without the form, but then you'd have to explain at the all-hands why you deviated from process, and someone will say "I appreciate the urgency, but we have these processes for a reason."</p>
     <div class="tags">
-      <span class="tag">consciousness</span>
-      <span class="tag">panpsychism</span>
-      <span class="tag">wire crossing</span>
+      <span class="tag">bureaucracy</span>
+      <span class="tag">compliance</span>
+      <span class="tag">Dave</span>
     </div>
-    <div class="links">
-      <a href="https://www.sciencedaily.com/releases/2026/04/260406192809.htm" target="_blank" rel="noopener">ScienceDaily</a>
-      <a href="https://bigthink.com/neuropsych/consciousness-bet-25-years/" target="_blank" rel="noopener">Big Think</a>
-    </div>
+    <div class="difficulty">Difficulty: Impossible (Dave is not answering his phone)</div>
   </article>
 
-  <!-- meme -->
   <article class="post">
-    <div class="post-type">memes</div>
-    <h2><a href="https://doubleblindmag.com/mushroom-memes/" target="_blank" rel="noopener">Mushroom Memes (DoubleBlind)</a></h2>
-    <p class="summary">Curated collection featuring the "before and after" of trying mushrooms (stick figure to fractal being), "explaining to your friend that the trees are breathing," and "me explaining to my sober friend why the carpet patterns are alive."</p>
+    <div class="post-type">epistemological</div>
+    <h2>The Trolley Is Heading Toward Five Mannequins but You Are Not 100% Sure They Are Mannequins</h2>
+    <p class="summary">They are almost certainly mannequins. They are wearing wigs and their arms are at unnatural angles. One of them has a price tag. But the lighting is bad and one of them might have blinked. You have about four seconds to decide. If you pull the lever and they were mannequins, you diverted a trolley for no reason and everyone will think you are insane. If you don't pull it and they were people, that's much worse.</p>
+    <p class="verdict">The mannequin on the far left is wearing the exact outfit your coworker wore yesterday. This is not helpful information but you cannot stop thinking about it.</p>
     <div class="tags">
-      <span class="tag">psychedelics</span>
-      <span class="tag">humor</span>
+      <span class="tag">epistemology</span>
+      <span class="tag">uncanny valley</span>
     </div>
+    <div class="difficulty">Difficulty: High (insufficient data, declining time horizon)</div>
   </article>
 
-  <!-- 5. Clergy psilocybin study -->
   <article class="post">
-    <div class="post-type">reddit &rarr; Johns Hopkins</div>
-    <h2><a href="https://www.liebertpub.com/doi/10.1089/psymed.2023.0044" target="_blank" rel="noopener">They Gave Priests Mushrooms. The Priests Said It Was More Meaningful Than Most of Their Careers.</a></h2>
-    <div class="source">Psychedelic Medicine / Johns Hopkins, 2025</div>
-    <p class="summary">For years, psychedelic communities on Reddit argued that psychedelic experiences were genuinely mystical, not merely hallucinatory, and that established religious leaders would recognize them as such. The Griffiths study gave psilocybin to 29 clergy from Christian, Jewish, Muslim, and other traditions. 88% met criteria for a "complete" mystical experience. Most rated at least one session as among the top five most spiritually meaningful moments of their entire lives. Effects persisted at 16-month follow-up.</p>
-    <p class="crossover">Reddit psychonauts said "give a priest mushrooms and he'll have a religious experience"; Johns Hopkins did exactly that, and the priests agreed.</p>
-    <div class="tags">
-      <span class="tag">religion</span>
-      <span class="tag">psychedelics</span>
-      <span class="tag">wire crossing</span>
-    </div>
-    <div class="links">
-      <a href="https://www.liebertpub.com/doi/10.1089/psymed.2023.0044" target="_blank" rel="noopener">Paper</a>
-      <a href="https://numinousways.com/sacred-encounters-how-psilocybin-transformed-clergy-from-major-world-religions/" target="_blank" rel="noopener">Numinous Ways</a>
-    </div>
-  </article>
-
-  <!-- joke -->
-  <article class="post">
-    <div class="post-type">joke</div>
-    <p class="joke-text">"I spent a lot of time, money and effort childproofing my house. But the kids still get in."</p>
-  </article>
-
-  <!-- 6. Microdosing placebo demolition -->
-  <article class="post">
-    <div class="post-type">Silicon Valley &rarr; placebo</div>
-    <h2><a href="https://www.sciencedirect.com/science/article/abs/pii/S002839082500440X" target="_blank" rel="noopener">Microdosing: Tech Culture's Most Confident Self-Experiment Is a Placebo Effect</a></h2>
-    <div class="source">ScienceDirect / Nature, 2022-2026</div>
-    <p class="summary">For years, r/microdosing and Silicon Valley treated psilocybin microdosing as a proven productivity hack. Multiple double-blind, placebo-controlled studies now consistently find null effects on attention, mood, and cognition relative to placebo. A 2026 mega-analysis found only a "subtle boost in divergent quality" with no improvement in convergent thinking. Placebo effects were particularly strong among prior psychedelic users, suggesting that the microdosing culture itself was generating the perceived benefits through expectancy.</p>
-    <p class="crossover">The people most sure they were "seeing clearly" were the most susceptible to expectancy bias. Internet culture built a mythology; controlled science demolished it.</p>
-    <div class="tags">
-      <span class="tag">psychedelics</span>
-      <span class="tag">placebo</span>
-      <span class="tag">wire crossing</span>
-    </div>
-    <div class="links">
-      <a href="https://www.sciencedirect.com/science/article/abs/pii/S002839082500440X" target="_blank" rel="noopener">2026 Study</a>
-      <a href="https://www.nature.com/articles/s41398-022-02039-0" target="_blank" rel="noopener">Nature</a>
-    </div>
-  </article>
-
-  <!-- discuss -->
-  <article class="post">
-    <div class="post-type">discuss</div>
-    <p class="discuss-text">If you could homestead anywhere in the American desert with unlimited water but no internet, or keep your current life exactly as is, which would you pick?</p>
-    <p class="discuss-context">desert / lifestyle</p>
-  </article>
-
-  <!-- 7. Border wall intaglio -->
-  <article class="post">
-    <div class="post-type">news</div>
-    <h2><a href="https://archaeology.org/news/2026/05/04/las-playas-intaglio-damaged-by-border-wall-construction-in-arizona/" target="_blank" rel="noopener">Border Wall Construction Bulldozes 1,000-Year-Old Sacred Desert Intaglio in Arizona</a></h2>
-    <div class="source">Archaeology Magazine / The Intercept, April-May 2026</div>
-    <p class="summary">DHS contractors building a second parallel border wall scraped away 60-70 feet of the Las Playas Intaglio, a 200-foot fish-shaped etching in desert pavement on Arizona's Cabeza Prieta National Wildlife Refuge, sacred to the Tohono O'odham Nation. A cultural monitor had previously flagged it as a site to avoid. DHS environmental waivers exempted the construction from laws protecting Indigenous archaeological sites.</p>
-    <div class="tags">
-      <span class="tag">desert</span>
-      <span class="tag">archaeology</span>
-      <span class="tag">border policy</span>
-    </div>
-    <div class="links">
-      <a href="https://archaeology.org/news/2026/05/04/las-playas-intaglio-damaged-by-border-wall-construction-in-arizona/" target="_blank" rel="noopener">Archaeology</a>
-      <a href="https://www.archaeologysouthwest.org/2026/05/01/awe-anger-sorrow-thoughts-on-the-las-playas-intaglio/" target="_blank" rel="noopener">Archaeology Southwest</a>
-    </div>
-  </article>
-
-  <!-- candy -->
-  <article class="post">
-    <div class="post-type">candy</div>
-    <h3 class="candy-name"><a href="https://www.prnewswire.com/news-releases/hot-tamales-turns-up-the-flavor-with-new-tropical-heat-302762800.html" target="_blank" rel="noopener">Hot Tamales Tropical Heat</a></h3>
-    <p class="candy-desc">Three new flavors: Fiery Lime, Mango Chili, and Pineapple Picante. The lime reportedly "tastes authentic" with spice that comes on quick. Available at Walmart, Dollar Tree, Albertsons, Kroger.</p>
-  </article>
-
-  <!-- 8. AuDHD: Reddit coined the term -->
-  <article class="post">
-    <div class="post-type">reddit &rarr; DSM</div>
-    <h2><a href="https://www.jmir.org/2025/1/e70914" target="_blank" rel="noopener">Reddit Created a Clinical Concept Before the DSM Did</a></h2>
-    <div class="source">Journal of Medical Internet Research, 2025</div>
-    <p class="summary">The term "AuDHD" (autism + ADHD co-occurrence) was coined by Reddit and TikTok communities. It never appeared in any diagnostic manual. A 2025 study analyzed 10 years of Reddit data and found autism mentions in r/ADHD surged in 2021, overtaking bipolar and OCD to become the most frequently mentioned co-occurring condition. A separate study estimated roughly 45% of adults with ADHD show significant autistic traits, validating what the community had been saying for years.</p>
-    <p class="crossover">Reddit users created a diagnostic category, gave it a name, and built a community around it years before the DSM or any journal caught up; the 2025 study essentially ran the numbers and said "yeah, they were right."</p>
-    <div class="tags">
-      <span class="tag">autism</span>
-      <span class="tag">ADHD</span>
-      <span class="tag">wire crossing</span>
-    </div>
-    <div class="links">
-      <a href="https://www.jmir.org/2025/1/e70914" target="_blank" rel="noopener">JMIR</a>
-      <a href="https://www.nationalgeographic.com/health/article/what-is-audhd-adhd-autism-overlap-adults" target="_blank" rel="noopener">Nat Geo</a>
-    </div>
-  </article>
-
-  <!-- meme -->
-  <article class="post">
-    <div class="post-type">memes</div>
-    <h2><a href="https://www.boredpanda.com/funny-home-improvement-fails/" target="_blank" rel="noopener">49 Absolute Worst Home Improvement Fails</a></h2>
-    <p class="summary">Outlets installed upside down inside shower stalls. Toilets facing walls with 3 inches of clearance. Stairs that lead directly into ceilings. A door that opens into another door.</p>
-    <div class="tags">
-      <span class="tag">DIY fails</span>
-      <span class="tag">humor</span>
-    </div>
-  </article>
-
-  <!-- 9. Autistic burnout: reddit described it first -->
-  <article class="post">
-    <div class="post-type">reddit &rarr; journal</div>
-    <h2><a href="https://link.springer.com/article/10.1007/s10803-025-06765-4" target="_blank" rel="noopener">Autistic Burnout: Reddit Described a Syndrome, Researchers Used Their Posts to Prove It Was Real</a></h2>
-    <div class="source">Journal of Autism and Developmental Disorders / Springer, 2025</div>
-    <p class="summary">Autistic communities on Reddit spent years describing "autistic burnout" as a specific phenomenon: chronic exhaustion, increased sensory sensitivity, and social withdrawal caused by long-term masking. Clinicians dismissed it. A 2025 study analyzed 249 Reddit threads and confirmed three core components matching community descriptions exactly. Research also confirmed that long-term masking produces measurably higher biological stress levels.</p>
-    <p class="crossover">Autistic Reddit users described a syndrome that didn't exist in any diagnostic manual; researchers then literally used their Reddit posts as data to prove the syndrome was real.</p>
-    <div class="tags">
-      <span class="tag">autism</span>
-      <span class="tag">neuroscience</span>
-      <span class="tag">wire crossing</span>
-    </div>
-    <div class="links">
-      <a href="https://link.springer.com/article/10.1007/s10803-025-06765-4" target="_blank" rel="noopener">Springer</a>
-      <a href="https://onlinelibrary.wiley.com/doi/10.1002/aur.3129" target="_blank" rel="noopener">Wiley</a>
-    </div>
-  </article>
-
-  <!-- joke -->
-  <article class="post">
-    <div class="post-type">joke</div>
-    <p class="joke-text">"My wife told me to stop impersonating a flamingo. I had to put my foot down."</p>
-  </article>
-
-  <!-- 10. Meditation = psychedelics, without drugs -->
-  <article class="post">
-    <div class="post-type">paper &rarr; social</div>
-    <h2><a href="https://www.sciencedaily.com/releases/2026/04/260406192913.htm" target="_blank" rel="noopener">Seven Days of Meditation Rewires the Brain to Resemble Psychedelic States</a></h2>
-    <div class="source">Communications Biology / UC San Diego, April 2026</div>
-    <p class="summary">Twenty adults completed a 7-day residential retreat with 33 hours of guided practice. Brain scans showed reduced default mode network chatter, boosted immune signaling, increased natural pain-relief chemicals. Participants who reported stronger mystical experiences showed brain states resembling those seen under psychedelics. The convergence between meditation-induced and psychedelic-induced brain states, achieved entirely without drugs.</p>
-    <div class="tags">
-      <span class="tag">meditation</span>
-      <span class="tag">neuroscience</span>
-      <span class="tag">mysticism</span>
-    </div>
-    <div class="links">
-      <a href="https://www.sciencedaily.com/releases/2026/04/260406192913.htm" target="_blank" rel="noopener">ScienceDaily</a>
-      <a href="https://scitechdaily.com/researchers-discover-intensive-meditation-retreat-rewires-the-brain-and-blood-in-just-7-days/" target="_blank" rel="noopener">SciTechDaily</a>
-    </div>
-  </article>
-
-  <!-- discuss -->
-  <article class="post">
-    <div class="post-type">discuss</div>
-    <p class="discuss-text">Would you rather your kids grow up to be deeply kind but professionally unremarkable, or wildly successful but kind of cold?</p>
-    <p class="discuss-context">parenting / values</p>
-  </article>
-
-  <!-- 11. AAP screen time reversal -->
-  <article class="post">
-    <div class="post-type">reddit &rarr; AAP</div>
-    <h2><a href="https://www.edsurge.com/news/2026-02-05-new-aap-screen-time-recommendations-focus-less-on-screens-more-on-family-time" target="_blank" rel="noopener">AAP Screen Time Reversal: Reddit Parents Were Right All Along</a></h2>
-    <div class="source">EdSurge / AAP, January 2026</div>
-    <p class="summary">For years, the AAP enforced strict "no more than 2 hours of screen time" guidelines. Parents on r/Parenting and r/ScienceBasedParenting pushed back relentlessly, arguing that FaceTiming grandparents, building in Minecraft, and watching random YouTube are fundamentally different activities. In January 2026, the AAP reversed course, dropping strict hour limits and shifting to a framework based on content quality, context, and family connection.</p>
-    <p class="crossover">The American Academy of Pediatrics spent a decade telling parents to count minutes; Reddit parents spent a decade saying that was stupid; the AAP quietly agreed.</p>
-    <div class="tags">
-      <span class="tag">parenting</span>
-      <span class="tag">screen time</span>
-      <span class="tag">wire crossing</span>
-    </div>
-    <div class="links">
-      <a href="https://www.edsurge.com/news/2026-02-05-new-aap-screen-time-recommendations-focus-less-on-screens-more-on-family-time" target="_blank" rel="noopener">EdSurge</a>
-      <a href="https://health.choc.org/updated-aap-recommendations-for-screen-time/" target="_blank" rel="noopener">CHOC</a>
-    </div>
-  </article>
-
-  <!-- meme -->
-  <article class="post">
-    <div class="post-type">memes</div>
-    <h2><a href="https://zillowgonewild.com/" target="_blank" rel="noopener">Zillow Gone Wild</a></h2>
-    <p class="summary">The 1.8M-follower account (now an HGTV show). Highlights include a $650K Lake Tahoe duplex filled with posed mannequins in ballgowns, a $2.2M New Jersey mansion with 81 wreaths, 30 Christmas trees, 238 angels, and 115 religious statues.</p>
-    <div class="tags">
-      <span class="tag">real estate</span>
-      <span class="tag">absurd</span>
-    </div>
-  </article>
-
-  <!-- 12. Tartaria -->
-  <article class="post">
-    <div class="post-type">4chan &rarr; architecture</div>
-    <h2><a href="https://www.bloomberg.com/news/features/2021-04-27/inside-architecture-s-wildest-conspiracy-theory" target="_blank" rel="noopener">Tartaria: The Conspiracy Theory That Accidentally Got People Into Real Architectural History</a></h2>
-    <div class="source">Bloomberg / Discover Magazine</div>
-    <p class="summary">The Tartaria/mud flood conspiracy, which originated in Russian pseudohistory and spread through 4chan and Reddit, claims ornate pre-modern buildings were built by a lost advanced civilization. The theory is comprehensively debunked. But it has had a genuine side effect: it got a generation of internet users interested in real architectural history, preservation, and the real reasons why 19th-century buildings look so different from modern ones.</p>
-    <p class="crossover">Tartaria believers are wrong about literally everything, but "why did we stop building beautiful buildings?" is a real question that serious architects struggle with, making this the rare conspiracy theory that's more interesting for what it reveals about the conspiracists than about the conspiracy.</p>
-    <div class="tags">
-      <span class="tag">architecture</span>
-      <span class="tag">conspiracy</span>
-      <span class="tag">wire crossing</span>
-    </div>
-    <div class="links">
-      <a href="https://www.bloomberg.com/news/features/2021-04-27/inside-architecture-s-wildest-conspiracy-theory" target="_blank" rel="noopener">Bloomberg</a>
-      <a href="https://www.discovermagazine.com/what-is-the-lost-empire-of-tartaria-45702" target="_blank" rel="noopener">Discover</a>
-    </div>
-  </article>
-
-  <!-- joke -->
-  <article class="post">
-    <div class="post-type">joke</div>
-    <p class="joke-text">"My wife said I never listen to her. At least, I think that's what she said."</p>
-  </article>
-
-  <!-- 13. Seattle housing -->
-  <article class="post">
-    <div class="post-type">market data</div>
-    <h2><a href="https://www.themadronagroup.com/seattle-housing-market-report/" target="_blank" rel="noopener">Seattle Housing: First Time in a Decade That Income Growth Outpaces Home Prices</a></h2>
-    <div class="source">The Madrona Group / KIRO 7 / Zillow, May 2026</div>
-    <p class="summary">Active listings in Washington state are up 28% year over year, inventory expanded sharply in May, and mortgage rates are drifting toward the low-6% range. Most forecasts project 2-5% metro-wide appreciation with wide neighborhood variation. The shift from a supply-starved frenzy to a balanced market is the most consequential local change in years.</p>
-    <div class="tags">
-      <span class="tag">real estate</span>
-      <span class="tag">seattle</span>
-      <span class="tag">housing</span>
-    </div>
-    <div class="links">
-      <a href="https://www.themadronagroup.com/seattle-housing-market-report/" target="_blank" rel="noopener">Madrona Group</a>
-      <a href="https://www.kiro7.com/news/whats-happening-with/A3XMCOHNYY7SRHXJS32GRKI7FQ/" target="_blank" rel="noopener">KIRO 7</a>
-    </div>
-  </article>
-
-  <!-- candy -->
-  <article class="post">
-    <div class="post-type">candy</div>
-    <h3 class="candy-name"><a href="https://livejapan.com/en/in-tokyo/in-pref-tokyo/in-shibuya/article-a0005326/" target="_blank" rel="noopener">Japan's 2026 Matcha Snack Lineup</a></h3>
-    <p class="candy-desc">Don Quijote stores have rolled out matcha gummies, matcha potato chips, matcha candies, Hi-Chocolat Truffles in Earl Grey and matcha, and Mount Fuji-themed Alfort chocolate biscuits stamped with a Fuji design.</p>
-  </article>
-
-  <!-- 14. Tariffs + renovation -->
-  <article class="post">
-    <div class="post-type">news</div>
-    <h2><a href="https://www.brookings.edu/articles/recent-tariffs-threaten-residential-construction/" target="_blank" rel="noopener">Tariffs Are Adding $10,000+ to Typical Home Renovation Projects</a></h2>
-    <div class="source">Brookings / NAHB / CBS News, 2026</div>
-    <p class="summary">25% on kitchen cabinets (rising to 50%), 10% on softwood lumber, 25% on upholstered wood products. NAHB estimates current tariffs add roughly $10,900 per new home. A gut kitchen renovation now hits tariffs on cabinets, appliances, copper plumbing, steel framing, and lumber simultaneously. The practical question: act now or wait for possible rollbacks.</p>
-    <div class="tags">
-      <span class="tag">renovation</span>
-      <span class="tag">tariffs</span>
-      <span class="tag">real estate</span>
-    </div>
-    <div class="links">
-      <a href="https://www.brookings.edu/articles/recent-tariffs-threaten-residential-construction/" target="_blank" rel="noopener">Brookings</a>
-      <a href="https://www.cbsnews.com/news/tariffs-construction-remodeling-costs/" target="_blank" rel="noopener">CBS News</a>
-    </div>
-  </article>
-
-  <!-- discuss -->
-  <article class="post">
-    <div class="post-type">discuss</div>
-    <p class="discuss-text">If money were no object, would you rather renovate a bizarre existing structure (converted water tower, old church, decommissioned fire station) or build something conventional from scratch on perfect land?</p>
-    <p class="discuss-context">real estate / DIY</p>
-  </article>
-
-  <!-- 15. Autism + Parkinson's -->
-  <article class="post">
-    <div class="post-type">paper</div>
-    <h2><a href="https://health.ucdavis.edu/news/headlines/autism-research-in-2026-strong-and-diverse-despite-funding-uncertainty/2026/05" target="_blank" rel="noopener">Adults with Autism Show Parkinson's-Like Brain Abnormalities</a></h2>
-    <div class="source">UC Davis MIND Institute, May 2026</div>
-    <p class="summary">Brain imaging reveals young adults with autism show scan abnormalities typically associated with Parkinson's disease, opening an unexpected connection and a potential path toward early prevention. Separately, researchers found the MDGA1 gene mutation causes autism primarily in males, while females are protected by estrogen, which may explain the long-observed gender disparity in diagnosis.</p>
-    <div class="tags">
-      <span class="tag">autism</span>
-      <span class="tag">neuroscience</span>
-      <span class="tag">health</span>
-    </div>
-    <div class="links">
-      <a href="https://health.ucdavis.edu/news/headlines/autism-research-in-2026-strong-and-diverse-despite-funding-uncertainty/2026/05" target="_blank" rel="noopener">UC Davis</a>
-    </div>
-  </article>
-
-  <!-- meme -->
-  <article class="post">
-    <div class="post-type">memes</div>
-    <h2><a href="https://www.boredpanda.com/funny-philosophy-memes/" target="_blank" rel="noopener">89 Deep and Funny Philosophy Memes</a></h2>
-    <p class="summary">"Might either cure your existential crisis or make it worse." Includes "Is this a pigeon?" repurposed for epistemology, Plato's cave as a movie theater, and Descartes: "I think, therefore I am" / his friend: "I drink, therefore I am... at the bar."</p>
+    <div class="post-type">recursive</div>
+    <h2>The Five People on the Track Are All Moral Philosophers Debating What You Should Do</h2>
+    <p class="summary">The trolley approaches. The five people on the track are: a utilitarian, a deontologist, a virtue ethicist, a moral relativist, and a guy who keeps saying "well, actually, Philippa Foot's original formulation was about a surgeon." They see the trolley. They begin arguing about whether you should pull the lever. The utilitarian is yelling. The deontologist refuses to move because leaving the track would constitute an action rather than an inaction. The moral relativist says there is no objective ground on which to prefer one outcome. The virtue ethicist is trying to determine what a virtuous person would do but has been thinking for three minutes. The Philippa Foot guy is correcting everyone's citations.</p>
+    <p class="verdict">The person on the other track is a software engineer who does not care about any of this and would simply like to go home.</p>
     <div class="tags">
       <span class="tag">philosophy</span>
-      <span class="tag">consciousness</span>
+      <span class="tag">irony</span>
+      <span class="tag">academia</span>
     </div>
+    <div class="difficulty">Difficulty: Extremely high (they will critique your decision regardless)</div>
   </article>
 
-  <!-- 16. Off-grid desert -->
   <article class="post">
-    <div class="post-type">news</div>
-    <h2><a href="https://landlimited.com/blogs/off-grid-living-on-raw-land-2026-real-costs-hidden-risks-success-stories" target="_blank" rel="noopener">Off-Grid Desert Homesteading in 2026: More Achievable Than Ever</a></h2>
-    <div class="source">Land Limited, 2026</div>
-    <p class="summary">With advances in affordable solar batteries and efficient water harvesting, the economics of off-grid desert living have shifted. Starter homesteads of 5-40 acres in New Mexico or Utah run $1,000-$5,000 per acre. Success stories include a 30-acre Arizona homestead running entirely on solar and rainwater. The biggest hidden cost is water: "cheap desert land is not cheap if drilling a well is brutal or hauling water becomes a full-time hobby."</p>
+    <div class="post-type">social</div>
+    <h2>The Trolley Is Heading Toward Five People Who Are All Loudly Spoiling the Ending of a Show You Haven't Finished</h2>
+    <p class="summary">They are shouting. You can hear them clearly from the lever platform. You are on season 3, episode 7. They are discussing the series finale in extraordinary detail. One of them just revealed who dies. Another one is explaining a twist you did not see coming. A third is doing the thing where they say "oh man, wait until you see what happens in season 4" which is arguably worse.</p>
+    <p class="verdict">You know you have to pull the lever. You know this. But you are going to think about it for a weird amount of time first, and that says something about you that you would prefer not to examine.</p>
     <div class="tags">
-      <span class="tag">desert</span>
-      <span class="tag">homesteading</span>
-      <span class="tag">off-grid</span>
+      <span class="tag">streaming</span>
+      <span class="tag">spoilers</span>
+      <span class="tag">moral character</span>
     </div>
-    <div class="links">
-      <a href="https://landlimited.com/blogs/off-grid-living-on-raw-land-2026-real-costs-hidden-risks-success-stories" target="_blank" rel="noopener">Land Limited</a>
-      <a href="https://iconiclife.com/off-grid-living-how-this-desert-home-blends-luxury-with-sustainability/" target="_blank" rel="noopener">Iconic Life</a>
-    </div>
+    <div class="difficulty">Difficulty: Ethically easy, emotionally complicated</div>
   </article>
 
-  <!-- 17. Conservative civil war -->
   <article class="post">
-    <div class="post-type">politics</div>
-    <h2><a href="https://thehill.com/newsletters/the-movement/5660450-the-movement-strife-conservatives-2026/" target="_blank" rel="noopener">The Conservative Civil War: Heritage Foundation Exodus Sets Stage for 2026 Midterms</a></h2>
-    <div class="source">The Hill / CNN, late 2025 - early 2026</div>
-    <p class="summary">More than a dozen Heritage Foundation staffers left to join a group founded by Mike Pence, after Heritage president Kevin Roberts pushed in a more populist, MAGA-aligned direction. The breaking point came when Roberts defended Tucker Carlson's interview with Nick Fuentes. An open factional war between traditional conservatives and New Right populists over who defines the post-Trump GOP, with 2026 midterms as the first real test.</p>
+    <div class="post-type">logistical</div>
+    <h2>You Are the Trolley</h2>
+    <p class="summary">You have no hands. You have no lever. You are a trolley. You did not ask for this. You were manufactured in a factory in Cincinnati and installed on these tracks in 2003 and you have been going back and forth on the same route for 23 years. You have never been asked your opinion about anything. Today, for the first time, there are five people on the track, and everyone is looking at the guy next to the lever as though this is his problem. It is your problem. You are the one who will hit them. No one has considered your perspective. No one has asked if you are okay.</p>
+    <p class="verdict">You are not okay. You are a trolley.</p>
     <div class="tags">
-      <span class="tag">politics</span>
-      <span class="tag">conservatism</span>
-      <span class="tag">GOP</span>
+      <span class="tag">perspective</span>
+      <span class="tag">labor</span>
+      <span class="tag">Cincinnati</span>
     </div>
-    <div class="links">
-      <a href="https://thehill.com/newsletters/the-movement/5660450-the-movement-strife-conservatives-2026/" target="_blank" rel="noopener">The Hill</a>
-    </div>
+    <div class="difficulty">Difficulty: You do not have the ability to experience difficulty. You are a trolley.</div>
   </article>
 
-  <!-- final joke -->
   <article class="post">
-    <div class="post-type">joke</div>
-    <p class="joke-text">"I told my wife she was drawing her eyebrows too high. She looked surprised."</p>
+    <div class="post-type">economic</div>
+    <h2>The Trolley Is Heading Toward Five People but Pulling the Lever Voids the Warranty</h2>
+    <p class="summary">You purchased the Extended Trolley Protection Plan for $249.99. It covers mechanical failure, weather damage, and track defects. It does not cover "deliberate operator intervention in the lever mechanism." A small sticker on the lever reads: "WARNING: Unauthorized lever operation voids all warranties and service agreements. For lever-related inquiries, call 1-800-TROLLEY (wait times are currently 45 minutes)." The trolley cost $1.2 million.</p>
+    <p class="verdict">You could pull the lever and save five lives, or you could call the warranty hotline and be placed on hold while listening to a smooth jazz version of "Don't Stop Believin'" until the trolley resolves the situation on its own.</p>
+    <div class="tags">
+      <span class="tag">capitalism</span>
+      <span class="tag">warranty</span>
+      <span class="tag">smooth jazz</span>
+    </div>
+    <div class="difficulty">Difficulty: $249.99</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">escalation</div>
+    <h2>Multi-Track Drifting</h2>
+    <p class="summary">A runaway trolley approaches a fork. On the left track: five people. On the right track: one person. You grab the lever and, with a single fluid motion, angle the trolley so that it rides both tracks simultaneously, hitting all six people. This was not one of the options. No one told you to do this. Sparks fly. The trolley screams across both rails. Everyone is screaming. You are screaming. The trolley is doing something no trolley has ever done. You have found a third option and it is the worst one.</p>
+    <p class="verdict">This is technically an act of creative problem-solving.</p>
+    <div class="tags">
+      <span class="tag">maximalism</span>
+      <span class="tag">innovation</span>
+      <span class="tag">no</span>
+    </div>
+    <div class="difficulty">Difficulty: Negative (you made it worse on purpose)</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">interpersonal</div>
+    <h2>The Person on the Side Track Is the Guy Who Invented the Trolley Problem</h2>
+    <p class="summary">Philippa Foot, 1967. She constructed this exact scenario as a thought experiment. She is now on the side track. She never imagined someone would actually build this. The five people on the main track are looking at her. She is looking at you. You are looking at the lever. The lever is looking at no one because it is a lever. There is an uncomfortable silence.</p>
+    <p class="verdict">She has opinions about what you should do, but sharing them now would compromise the integrity of the experiment, and she is nothing if not methodologically rigorous.</p>
+    <div class="tags">
+      <span class="tag">meta</span>
+      <span class="tag">philosophy</span>
+      <span class="tag">irony</span>
+    </div>
+    <div class="difficulty">Difficulty: Philosophically infinite</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">dietary</div>
+    <h2>The Trolley Is Heading Toward Five People but Pulling the Lever Also Sends an Email to Your Entire Contact List Revealing That You Eat String Cheese by Biting Directly Into It Instead of Peeling It</h2>
+    <p class="summary">The mechanism is unclear. The lever is somehow connected to your email account. Engineers have verified the connection. If you pull the lever, the trolley diverts, five people live, and 847 people in your contacts receive a detailed email, with photographic evidence, showing you eating string cheese incorrectly. Your mother is in your contacts. Your boss is in your contacts. Your ex who you told "I'm a very deliberate person" is in your contacts.</p>
+    <p class="verdict">Is it murder if you just walk away? Legally, yes. But socially, the string cheese thing might be worse.</p>
+    <div class="tags">
+      <span class="tag">privacy</span>
+      <span class="tag">cheese</span>
+      <span class="tag">reputation</span>
+    </div>
+    <div class="difficulty">Difficulty: Devastating</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">temporal</div>
+    <h2>The Trolley Problem but You Have to Decide During a Work Call Where Someone Just Asked "Does Anyone Have Any Questions?"</h2>
+    <p class="summary">The trolley is approaching. You need to pull the lever. But you are on a Zoom call with 34 people and Linda from marketing just asked if anyone has questions about the Q3 brand refresh. You are muted. If you unmute to deal with the trolley situation, Linda will think you have a question about the brand refresh, and you will have to either ask a fake question or explain the trolley situation, which will derail (no pun intended) the meeting. The meeting was supposed to end twelve minutes ago.</p>
+    <p class="verdict">You type "sorry, have to jump to another call" in the chat, pull the lever, save five lives, and spend the rest of the afternoon wondering if Linda noticed you left.</p>
+    <div class="tags">
+      <span class="tag">remote work</span>
+      <span class="tag">Zoom</span>
+      <span class="tag">Linda</span>
+    </div>
+    <div class="difficulty">Difficulty: Low (trolley), Extreme (social)</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">theological</div>
+    <h2>God Appears and Says "I Put Those People on the Track on Purpose" and Then Leaves Without Elaborating</h2>
+    <p class="summary">A booming voice from the sky. A blinding light. God, or something claiming to be God, announces that the five people on the track are there intentionally, as part of a plan. The voice does not explain the plan. The voice does not say whether pulling the lever is part of the plan. The voice does not take questions. The light fades. You are alone with the lever. The trolley is still coming. The five people heard the voice too and are now having a theological crisis on the tracks instead of moving.</p>
+    <p class="verdict">One of the five people on the track has become an atheist in real time, which is impressive given the circumstances.</p>
+    <div class="tags">
+      <span class="tag">theodicy</span>
+      <span class="tag">free will</span>
+      <span class="tag">unhelpful omniscience</span>
+    </div>
+    <div class="difficulty">Difficulty: Cosmically ambiguous</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">nostalgia</div>
+    <h2>The Trolley Is a Shopping Cart at Costco and Both Aisles Have Free Samples</h2>
+    <p class="summary">You are pushing a shopping cart the size of a compact car. Aisle 7 has free samples of a new type of cracker with an aggressive cheese spread. Aisle 8 has free samples of tiny sausages on toothpicks being distributed by a woman named Donna who remembers you from last week. You can only go down one aisle. The other aisle's samples will be gone by the time you loop back. The stakes could not be lower but your heart rate suggests otherwise.</p>
+    <p class="verdict">Donna sees you hesitate. Donna is disappointed. You have let Donna down.</p>
+    <div class="tags">
+      <span class="tag">retail</span>
+      <span class="tag">Donna</span>
+      <span class="tag">tiny sausages</span>
+    </div>
+    <div class="difficulty">Difficulty: Surprisingly high</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">legal</div>
+    <h2>The Trolley Has a Lawyer</h2>
+    <p class="summary">Before you can touch the lever, a man in a navy suit steps out from behind the trolley and hands you a card. He represents the trolley. The trolley, he explains, has been operating within its legal right-of-way. The five people on the track are trespassing. His client (the trolley) bears no liability. If you pull the lever, you are interfering with the lawful operation of a transit vehicle, and the trolley (his client) will pursue damages. He has a briefcase. Inside the briefcase is another, smaller briefcase.</p>
+    <p class="verdict">The trolley's lawyer bills $750 an hour and this conversation has already lasted forty seconds.</p>
+    <div class="tags">
+      <span class="tag">liability</span>
+      <span class="tag">trespassing</span>
+      <span class="tag">billable hours</span>
+    </div>
+    <div class="difficulty">Difficulty: Litigious</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">emotional</div>
+    <h2>The Trolley Is Fine. Everyone Is Fine. But No One Thanked You for Standing by the Lever All Day Just in Case</h2>
+    <p class="summary">You stood by the lever for nine hours. In the rain. You brought a lunch. You watched every trolley pass safely. No one was ever in danger. But you were ready. You were so ready. And not one person said "hey, thanks for watching the lever." The trolley operators didn't wave. The pedestrians didn't acknowledge you. A child pointed at you and his mother said "don't stare." You are going home now. You are a little sad.</p>
+    <p class="verdict">You will be back tomorrow. You don't know why. Neither does your therapist.</p>
+    <div class="tags">
+      <span class="tag">thankless</span>
+      <span class="tag">vigilance</span>
+      <span class="tag">rain</span>
+    </div>
+    <div class="difficulty">Difficulty: Emotional</div>
+  </article>
+
+  <article class="post">
+    <div class="post-type">philosophical endgame</div>
+    <h2>There Are No Tracks. There Is No Trolley. There Is Only the Lever, and It Does Nothing, and You Pull It Anyway.</h2>
+    <p class="summary">You are standing in a field. There is a lever. It is connected to nothing. There are no tracks. There is no trolley. There are no people. You pull the lever. It moves freely, with no resistance. Nothing happens. You pull it again. Nothing happens again. You will pull it a third time. You know nothing will happen. You pull it. You feel something. Not satisfaction. Not relief. Something else. Something you cannot name. You let go of the lever. You walk away. Halfway across the field, you turn back. The lever is still there. You think about it for the rest of your life.</p>
+    <p class="verdict">This is either the most profound or the most pointless entry in this list, and the fact that you cannot tell which is, itself, the trolley problem.</p>
+    <div class="tags">
+      <span class="tag">absurdism</span>
+      <span class="tag">Camus</span>
+      <span class="tag">lever</span>
+    </div>
+    <div class="difficulty">Difficulty: Yes</div>
   </article>
 
 </main>
 
 <footer>
-  Curated readings. Updated May 22, 2026.
+  No trolleys were harmed in the making of this feed. Updated May 22, 2026.
 </footer>
 
 </body>
