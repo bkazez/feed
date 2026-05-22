@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed / Ben</title>
+  <style>
+    :root {
+      --bg: #141418;
+      --text: #e0e0e0;
+      --text-muted: #888;
+      --accent: #9b8ec4;
+      --accent-dim: #6e6394;
+      --border: #2a2a30;
+      --tag-bg: #1f1d28;
+      --tag-text: #9b8ec4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    header .date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .feed {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 4rem;
+    }
+
+    .item {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .item-number {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.75rem;
+      color: var(--accent-dim);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .item h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    .item h2 a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .item h2 a:hover {
+      color: var(--accent);
+    }
+
+    .source {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .summary {
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+    }
+
+    .links {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .links a {
+      color: var(--accent-dim);
+      text-decoration: none;
+      margin-right: 1rem;
+      transition: color 0.15s;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+    }
+
+    .links a::before {
+      content: "\2192\00a0";
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      border-top: 1px solid var(--border);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 2rem 1rem 1.5rem; }
+      .feed { padding: 0.5rem 1rem 3rem; }
+      .item h2 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Feed / Ben</h1>
+  <div class="date">May 22, 2026</div>
+</header>
+
+<main class="feed">
+
+  <article class="item">
+    <div class="item-number">01</div>
+    <h2><a href="https://medicalxpress.com/news/2026-04/voice-vocal-regeneration-uncovering-stem.html" target="_blank" rel="noopener">Scientists Map Stem Cells in Vocal Folds for the First Time, Opening Door to Voice Regeneration</a></h2>
+    <div class="source">Nature Communications / MedicalXpress, April 2026</div>
+    <p class="summary">Researchers used single-cell RNA sequencing and spatial transcriptomics to identify stem cell populations within the vocal fold mucosa for the first time. They found SOX9-positive basal cells in the epithelium and Lgr5-positive cells in the lamina propria. This is foundational work toward actually regenerating damaged vocal folds, which currently cannot be restored after injury or surgery. For any singer who has ever worried about vocal cord damage ending a career, this points toward a future where vocal tissue could literally be regrown.</p>
+    <div class="tags">
+      <span class="tag">vocal science</span>
+      <span class="tag">regenerative medicine</span>
+      <span class="tag">singing</span>
+    </div>
+    <div class="links">
+      <a href="https://medicalxpress.com/news/2026-04/voice-vocal-regeneration-uncovering-stem.html" target="_blank" rel="noopener">MedicalXpress</a>
+      <a href="https://www.nature.com/articles/s41467-026-71514-9" target="_blank" rel="noopener">Nature</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">02</div>
+    <h2><a href="https://www.washingtonpost.com/style/2026/03/31/metropolitan-opera-tristan-isolde-ending/" target="_blank" rel="noopener">The Met Gave Wagner's "Tristan und Isolde" a Happy Ending. What Does That Say About America?</a></h2>
+    <div class="source">The Washington Post, March 2026</div>
+    <p class="summary">Director Yuval Sharon's new Met production starring Lise Davidsen has divided the opera world by adding an onstage childbirth just before the Liebestod, ending with King Marke cradling the baby. Wagner's darkest, most transcendent ending, rewritten as rebirth. Patrons are furious ("that damned baby"), critics are split, and the whole thing raises the question of when a director's reinterpretation crosses from illuminating the work to overwriting it.</p>
+    <div class="tags">
+      <span class="tag">opera</span>
+      <span class="tag">Wagner</span>
+      <span class="tag">Met Opera</span>
+    </div>
+    <div class="links">
+      <a href="https://www.washingtonpost.com/style/2026/03/31/metropolitan-opera-tristan-isolde-ending/" target="_blank" rel="noopener">Washington Post</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">03</div>
+    <h2><a href="https://www.sciencedaily.com/releases/2026/03/260321012659.htm" target="_blank" rel="noopener">New Pill Cuts LDL Cholesterol by 60% Without Statins (and Without Muscle Pain)</a></h2>
+    <div class="source">UT Southwestern / NEJM, March 2026</div>
+    <p class="summary">Enlicitide, an oral PCSK9 inhibitor from Merck, slashed LDL cholesterol by up to 60% in a phase 3 trial of 2,909 patients. Until now, PCSK9 inhibitors required injections; this is a once-daily pill. It appears to be well tolerated without the muscle problems that plague statins. If approved, it could fundamentally change cholesterol management for millions of people.</p>
+    <div class="tags">
+      <span class="tag">cholesterol</span>
+      <span class="tag">heart health</span>
+      <span class="tag">pharma</span>
+    </div>
+    <div class="links">
+      <a href="https://www.sciencedaily.com/releases/2026/03/260321012659.htm" target="_blank" rel="noopener">ScienceDaily</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">04</div>
+    <h2><a href="https://www.sciencedaily.com/releases/2026/01/260114084122.htm" target="_blank" rel="noopener">Scientists Finally Solve 30-Year Mystery of Why Statins Cause Muscle Pain</a></h2>
+    <div class="source">Columbia / UBC / ScienceDaily, January 2026</div>
+    <p class="summary">Researchers used electron microscopy to watch simvastatin molecules physically bind to the ryanodine receptor in muscle cells, forcing open a calcium channel that should stay closed. The resulting continuous calcium leak is toxic to muscle tissue. This explains why roughly 10% of the 40 million Americans on statins experience muscle pain and weakness, and could lead to redesigned statins that lower cholesterol without latching onto muscle proteins.</p>
+    <div class="tags">
+      <span class="tag">statins</span>
+      <span class="tag">cholesterol</span>
+      <span class="tag">muscle biology</span>
+    </div>
+    <div class="links">
+      <a href="https://www.sciencedaily.com/releases/2026/01/260114084122.htm" target="_blank" rel="noopener">ScienceDaily</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">05</div>
+    <h2><a href="https://www.cnn.com/2025/12/10/travel/italian-cuisine-unesco-status" target="_blank" rel="noopener">Italian Cuisine Becomes First Entire National Cuisine Awarded UNESCO Heritage Status</a></h2>
+    <div class="source">CNN / UNESCO / Al Jazeera, December 2025</div>
+    <p class="summary">UNESCO unanimously recognized Italian cooking as Intangible Cultural Heritage, the first time an entire national culinary tradition received this designation. The recognition covers not just recipes but the social rituals: communal cooking, intimacy with ingredients, feeding others as an expression of love. Critics note the tension between the romanticized framing and the reality that many regional traditions are disappearing, artisanal producers are struggling, and the government wants the PR without funding preservation.</p>
+    <div class="tags">
+      <span class="tag">Italian food</span>
+      <span class="tag">cultural heritage</span>
+      <span class="tag">UNESCO</span>
+    </div>
+    <div class="links">
+      <a href="https://www.cnn.com/2025/12/10/travel/italian-cuisine-unesco-status" target="_blank" rel="noopener">CNN</a>
+      <a href="https://unherd.com/newsroom/unesco-heritage-label-flattens-italys-culinary-diversity/" target="_blank" rel="noopener">UnHerd</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">06</div>
+    <h2><a href="https://operawire.com/peter-gelbs-saudi-deal-falls-apart-amidst-metropolitan-opera-financial-turmoil/" target="_blank" rel="noopener">Met Opera's $200 Million Saudi Deal Collapses; Layoffs and Season Cuts Follow</a></h2>
+    <div class="source">OperaWire / BroadwayWorld, February-April 2026</div>
+    <p class="summary">The Met's controversial $200M deal with Saudi Arabia (performances at the Royal Diriyah Opera House in exchange for subsidies) fell apart when Saudi officials pulled out, citing economic damage from the Iran conflict and oil shipment disruptions. This left the Met in crisis: 20+ administrative layoffs, 4-15% salary cuts for executives, the 2026-27 season scaled back to 17 productions. The story touches human rights, geopolitics, and whether the art form's future depends on petrostates.</p>
+    <div class="tags">
+      <span class="tag">opera</span>
+      <span class="tag">Met Opera</span>
+      <span class="tag">geopolitics</span>
+    </div>
+    <div class="links">
+      <a href="https://operawire.com/peter-gelbs-saudi-deal-falls-apart-amidst-metropolitan-opera-financial-turmoil/" target="_blank" rel="noopener">OperaWire</a>
+      <a href="https://www.broadwayworld.com/article/Met-Operas-200-Million-Saudi-Arabia-Deal-Falls-Through-20260423" target="_blank" rel="noopener">BroadwayWorld</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">07</div>
+    <h2><a href="https://www.visahq.com/news/2026-03-01/it/italys-digital-nomad-visa-2026-new-guidance-clarifies-income-threshold-tax-perks-and-family-rights/" target="_blank" rel="noopener">Italy's Digital Nomad Visa Finally Gets Clear Guidelines</a></h2>
+    <div class="source">VisaHQ / Multiple Immigration Sources, March 2026</div>
+    <p class="summary">After years of vague rules, Italy published concrete guidelines for its digital nomad visa. Requirements include roughly 28,000 EUR annual income, health insurance with 30,000 EUR minimum coverage, and proof of 6+ months of remote work. The visa is for one year, renewable for two more, and does not require giving up US ties. Combined with Italy's 50% building renovation tax deduction for primary residences, the economics of buying and renovating a place in Italy while working remotely just got much clearer.</p>
+    <div class="tags">
+      <span class="tag">Italy</span>
+      <span class="tag">visa</span>
+      <span class="tag">expat life</span>
+    </div>
+    <div class="links">
+      <a href="https://www.visahq.com/news/2026-03-01/it/italys-digital-nomad-visa-2026-new-guidance-clarifies-income-threshold-tax-perks-and-family-rights/" target="_blank" rel="noopener">VisaHQ</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">08</div>
+    <h2><a href="https://berkhills.com/bay-area-living/berkeley-real-estate-market-report/" target="_blank" rel="noopener">Berkeley Housing: 88% of Homes Selling Above Asking, Median $1.6M</a></h2>
+    <div class="source">Berkeley Hills Living / Megan Micco RE, March 2026</div>
+    <p class="summary">Berkeley's median home price is $1.6M (up 9.2% year over year), 88.68% of homes sold above asking (up from 74.51% last year), and homes move in just 15 days. The sale-to-list ratio is 127%, meaning buyers pay 27% above list on average. For someone weighing Berkeley vs. Italy, the comparison is stark: a renovation project in a small Italian town for 30-50K EUR vs. a $1.6M median in Berkeley.</p>
+    <div class="tags">
+      <span class="tag">Berkeley</span>
+      <span class="tag">real estate</span>
+      <span class="tag">housing</span>
+    </div>
+    <div class="links">
+      <a href="https://berkhills.com/bay-area-living/berkeley-real-estate-market-report/" target="_blank" rel="noopener">Berkeley Hills Living</a>
+      <a href="https://www.meganmicco.com/blog/march-2026-real-estate-market-update/" target="_blank" rel="noopener">Megan Micco</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">09</div>
+    <h2><a href="https://www.whitehouse.gov/releases/2026/04/president-trumps-landmark-order-advances-breakthrough-mental-health-treatments-delivering-new-hope-to-veterans/" target="_blank" rel="noopener">Executive Order Accelerates Psychedelic Therapy Research, Including MDMA for PTSD</a></h2>
+    <div class="source">White House / Morgan Lewis, April 2026</div>
+    <p class="summary">The order directs federal agencies to accelerate research on psilocybin, MDMA, and other Schedule I psychedelics for mental health treatment, establishing Breakthrough Therapy designation pathways and at least $50 million in HHS funding. This comes after the FDA rejected Lykos Therapeutics' MDMA application for PTSD in 2024. The order does not bypass FDA approval standards, but the combination of scientific caution and political push creates a genuinely complex, evolving situation for mental health treatment.</p>
+    <div class="tags">
+      <span class="tag">mental health</span>
+      <span class="tag">psychedelics</span>
+      <span class="tag">FDA policy</span>
+    </div>
+    <div class="links">
+      <a href="https://www.whitehouse.gov/releases/2026/04/president-trumps-landmark-order-advances-breakthrough-mental-health-treatments-delivering-new-hope-to-veterans/" target="_blank" rel="noopener">White House</a>
+      <a href="https://www.morganlewis.com/pubs/2026/04/you-are-not-hallucinating-executive-order-aims-to-accelerate-approval-of-therapeutic-psychedelics" target="_blank" rel="noopener">Morgan Lewis</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <div class="item-number">10</div>
+    <h2><a href="https://time.com/article/2026/03/18/new-heart-health-guidelines-cholesterol/" target="_blank" rel="noopener">New Cholesterol Guidelines Push Screening and Treatment Much Earlier</a></h2>
+    <div class="source">Time / Johns Hopkins / AHA, March 2026</div>
+    <p class="summary">The 2026 ACC/AHA guidelines introduce a new risk calculator estimating both 10- and 30-year cardiovascular risk, recommend statins as early as age 30 for qualifying patients (down from the previous focus on 40+), and call for cholesterol screening in children ages 9-11. They also recommend one-time screening for lipoprotein(a), a genetic risk factor that most people have never had tested. The Lp(a) screening recommendation alone is worth a conversation with a doctor.</p>
+    <div class="tags">
+      <span class="tag">cholesterol</span>
+      <span class="tag">preventive health</span>
+      <span class="tag">heart disease</span>
+    </div>
+    <div class="links">
+      <a href="https://time.com/article/2026/03/18/new-heart-health-guidelines-cholesterol/" target="_blank" rel="noopener">Time</a>
+      <a href="https://www.hopkinsmedicine.org/news/newsroom/news-releases/2026/03/the-new-cholesterol-guideline-what-to-know" target="_blank" rel="noopener">Johns Hopkins</a>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  Curated readings. Updated May 22, 2026.
+</footer>
+
+</body>
+</html>
