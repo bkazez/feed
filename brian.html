@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feed</title>
+  <title>Feed / Brian</title>
   <style>
     :root {
       --bg: #1a1a1a;
-      --surface: #242424;
-      --surface-hover: #2a2a2a;
       --text: #e0e0e0;
       --text-muted: #888;
       --accent: #c49a6c;
@@ -18,11 +16,7 @@
       --tag-text: #c49a6c;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
@@ -59,39 +53,36 @@
       padding: 1rem 1.5rem 4rem;
     }
 
-    .item {
+    .post {
       border-bottom: 1px solid var(--border);
       padding: 2rem 0;
     }
 
-    .item:last-child {
-      border-bottom: none;
-    }
+    .post:last-child { border-bottom: none; }
 
-    .item-number {
+    .post-type {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--accent-dim);
-      letter-spacing: 0.05em;
       margin-bottom: 0.5rem;
     }
 
-    .item h2 {
+    .post h2 {
       font-size: 1.25rem;
       font-weight: 600;
       line-height: 1.4;
       margin-bottom: 0.6rem;
     }
 
-    .item h2 a {
+    .post h2 a {
       color: var(--text);
       text-decoration: none;
       transition: color 0.15s;
     }
 
-    .item h2 a:hover {
-      color: var(--accent);
-    }
+    .post h2 a:hover { color: var(--accent); }
 
     .source {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -104,6 +95,16 @@
       font-size: 0.95rem;
       color: #bbb;
       margin-bottom: 1rem;
+    }
+
+    .crossover {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 0.8rem;
+      padding-left: 0.8rem;
+      border-left: 2px solid var(--accent-dim);
     }
 
     .tags {
@@ -136,12 +137,46 @@
       transition: color 0.15s;
     }
 
-    .links a:hover {
-      color: var(--accent);
+    .links a:hover { color: var(--accent); }
+    .links a::before { content: "\2192\00a0"; }
+
+    .joke-text {
+      font-size: 1.05rem;
+      color: #ccc;
+      font-style: italic;
+      line-height: 1.6;
     }
 
-    .links a::before {
-      content: "\2192\00a0";
+    .discuss-text {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .discuss-context {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .candy-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .candy-name a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .candy-name a:hover { color: var(--accent); }
+
+    .candy-desc {
+      font-size: 0.9rem;
+      color: #bbb;
     }
 
     footer {
@@ -153,126 +188,33 @@
       color: var(--text-muted);
     }
 
-    .section-break {
-      text-align: center;
-      padding: 2.5rem 0 1rem;
-    }
-
-    .section-break h2 {
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent-dim);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    .joke {
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
-    }
-
-    .joke p {
-      font-size: 0.95rem;
-      color: #bbb;
-      font-style: italic;
-    }
-
-    .discuss {
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
-    }
-
-    .discuss p {
-      font-size: 1.05rem;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .discuss .context {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
-
-    .candy {
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
-    }
-
-    .candy h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .candy h3 a {
-      color: var(--text);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .candy h3 a:hover {
-      color: var(--accent);
-    }
-
-    .candy p {
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    .meme {
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
-    }
-
-    .meme h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .meme h3 a {
-      color: var(--text);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .meme h3 a:hover {
-      color: var(--accent);
-    }
-
-    .meme p {
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
     @media (max-width: 600px) {
       header { padding: 2rem 1rem 1.5rem; }
       .feed { padding: 0.5rem 1rem 3rem; }
-      .item h2 { font-size: 1.1rem; }
+      .post h2 { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Feed</h1>
+  <h1>Feed / Brian</h1>
   <div class="date">May 22, 2026</div>
 </header>
 
 <main class="feed">
 
-  <article class="item">
-    <div class="item-number">01</div>
+  <!-- 1. Psilocybin brain rewiring -->
+  <article class="post">
+    <div class="post-type">paper &rarr; social</div>
     <h2><a href="https://www.ucsf.edu/news/2026/05/431866/one-dose-psilocybin-changes-human-brain" target="_blank" rel="noopener">A Single Dose of Psilocybin Physically Rewires the Brain, and the Changes Last a Month</a></h2>
     <div class="source">UCSF / Nature Communications, May 2026</div>
-    <p class="summary">Researchers gave 28 psychedelic-naive volunteers one 25mg dose. Within 60 minutes, EEG showed dramatically higher brain entropy. A month later, DTI scans showed their neural tracts were physically denser with more structural integrity. The degree of entropy during the experience predicted how much insight and well-being each person reported weeks later. First study showing lasting anatomical brain changes from a single dose in healthy people.</p>
+    <p class="summary">Researchers gave 28 psychedelic-naive volunteers one 25mg dose. Within 60 minutes, EEG showed dramatically higher brain entropy. A month later, DTI scans showed their neural tracts were physically denser with more structural integrity. The degree of entropy during the experience predicted how much insight and well-being each person reported weeks later.</p>
+    <p class="crossover">Every r/psychonaut post saying "I took mushrooms once and it changed my brain" was dismissed as hippie talk until neuroscientists at Penn and UCSF found the literal synaptic rewiring that explains it.</p>
     <div class="tags">
       <span class="tag">psychedelics</span>
       <span class="tag">neuroscience</span>
-      <span class="tag">consciousness</span>
+      <span class="tag">wire crossing</span>
     </div>
     <div class="links">
       <a href="https://www.ucsf.edu/news/2026/05/431866/one-dose-psilocybin-changes-human-brain" target="_blank" rel="noopener">UCSF</a>
@@ -280,24 +222,143 @@
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">02</div>
-    <h2><a href="https://www.sciencedaily.com/releases/2026/04/260406192809.htm" target="_blank" rel="noopener">Christof Koch: "The Brain Might Not Create Consciousness After All"</a></h2>
-    <div class="source">BIAL Foundation Symposium, April 2026</div>
-    <p class="summary">Koch, the former chief scientist of the Allen Institute for Brain Science, argued consciousness is an intrinsic property of any sufficiently complex integrated system, not a product of the brain. He outlined three areas where materialist models fail: the impossibility of fully reducing subjective experience to neural processes, the difficulty modern physics faces in defining what is "real," and the persistence of mystical and near-death experiences that resist conventional explanation.</p>
+  <!-- joke break -->
+  <article class="post">
+    <div class="post-type">joke</div>
+    <p class="joke-text">"I told my boss I needed a raise because three companies were after me. He asked which ones. I said, 'The electric company, the gas company, and the internet provider.'"</p>
+  </article>
+
+  <!-- 2. NPC meme meets anendophasia -->
+  <article class="post">
+    <div class="post-type">4chan &rarr; paper</div>
+    <h2><a href="https://journals.sagepub.com/doi/10.1177/09567976251335583" target="_blank" rel="noopener">The NPC Meme Turns Out to Be Pointing at a Real Neurological Phenomenon</a></h2>
+    <div class="source">Psychological Science / Know Your Meme, 2024-2025</div>
+    <p class="summary">In 2018, 4chan's /v/ board spawned the NPC Wojak meme based on the premise that some people literally lack an inner monologue. The meme went viral, got people banned from Twitter, and generated NYT coverage. Then Nedergaard and Lupyan published research coining the term "anendophasia" (lack of inner speech), presenting evidence that inner speech frequency genuinely varies dramatically across adults. People with low inner speech performed measurably worse on verbal working memory tasks. The researchers explicitly referenced a Reddit thread where users denied having any inner voice at all.</p>
+    <p class="crossover">4chan made a meme dehumanizing people who "don't think"; six years later, neuroscientists confirmed some people genuinely lack inner speech, then had to spend the rest of the paper explaining why those people aren't actually NPCs.</p>
     <div class="tags">
       <span class="tag">consciousness</span>
-      <span class="tag">panpsychism</span>
-      <span class="tag">philosophy</span>
+      <span class="tag">memes</span>
+      <span class="tag">wire crossing</span>
     </div>
     <div class="links">
-      <a href="https://www.sciencedaily.com/releases/2026/04/260406192809.htm" target="_blank" rel="noopener">ScienceDaily</a>
-      <a href="https://neurosciencenews.com/consciousness-panpsychism-neuroscience-30464/" target="_blank" rel="noopener">Neuroscience News</a>
+      <a href="https://journals.sagepub.com/doi/10.1177/09567976251335583" target="_blank" rel="noopener">Paper</a>
+      <a href="https://knowyourmeme.com/memes/npc-wojak" target="_blank" rel="noopener">Know Your Meme</a>
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">03</div>
+  <!-- candy -->
+  <article class="post">
+    <div class="post-type">candy</div>
+    <h3 class="candy-name"><a href="https://www.theomnicosm.com/m-ms-popd-are-the-greatest-freeze-dried-candy-ive-ever-eaten/" target="_blank" rel="noopener">M&amp;M's POP'd Caramel (Freeze-Dried)</a></h3>
+    <p class="candy-desc">The first freeze-dried candy from M&amp;M's. Light, crispy, airy, with grainy centers that dissolve in your mouth. Reviewers say Mars got the format right on the first try, and caramel was the perfect flavor to freeze-dry.</p>
+  </article>
+
+  <!-- 3. Dead Internet Theory validated -->
+  <article class="post">
+    <div class="post-type">4chan &rarr; Stanford</div>
+    <h2><a href="https://www.fastcompany.com/91535495/dead-internet-theory-coming-true-new-research-stanford-calculates-where-we-are" target="_blank" rel="noopener">Dead Internet Theory: 4chan Conspiracy Partially Validated by Stanford</a></h2>
+    <div class="source">Stanford / Imperial College / Fast Company, 2025</div>
+    <p class="summary">The "Dead Internet Theory" originated on 4chan and Wizardchan around 2020-2021, claiming most internet content was already bot-generated. In 2025, researchers from Stanford and Imperial College found 35.3% of all new websites are AI-generated, with 17.6% entirely AI. A separate report found bots now account for 51% of all global web traffic, the first time automated activity outnumbered humans.</p>
+    <p class="crossover">Anonymous posters on the most disreputable corners of the internet diagnosed a civilizational shift that Stanford researchers later quantified; the conspiracy theorists were, if anything, conservative in their estimates.</p>
+    <div class="tags">
+      <span class="tag">AI</span>
+      <span class="tag">internet culture</span>
+      <span class="tag">wire crossing</span>
+    </div>
+    <div class="links">
+      <a href="https://www.fastcompany.com/91535495/dead-internet-theory-coming-true-new-research-stanford-calculates-where-we-are" target="_blank" rel="noopener">Fast Company</a>
+      <a href="https://www.cnbc.com/2026/03/26/ai-bots-humans-internet.html" target="_blank" rel="noopener">CNBC</a>
+    </div>
+  </article>
+
+  <!-- discuss -->
+  <article class="post">
+    <div class="post-type">discuss</div>
+    <p class="discuss-text">Would you rather live in a reality entirely of your own making but stay completely isolated, or live in a shared, uncertain reality full of connection and unpredictability?</p>
+    <p class="discuss-context">consciousness / philosophy</p>
+  </article>
+
+  <!-- 4. Koch loses bet, internet philosophy wins -->
+  <article class="post">
+    <div class="post-type">bet &rarr; meme &rarr; paper</div>
+    <h2><a href="https://www.sciencedaily.com/releases/2026/04/260406192809.htm" target="_blank" rel="noopener">Christof Koch: "The Brain Might Not Create Consciousness After All"</a></h2>
+    <div class="source">BIAL Foundation / ScienceDaily, April 2026</div>
+    <p class="summary">In 1998, Koch bet David Chalmers that the neural basis of consciousness would be identified by 2023. Koch lost. He delivered a case of wine. Then in April 2026, Koch argued consciousness is an intrinsic property of complex integrated systems, not a product of the brain. He outlined three areas where materialist models fail, including the persistence of mystical experiences that resist explanation.</p>
+    <p class="crossover">The world's most famous consciousness researcher lost a public bet, then pivoted to a position that internet philosophy memers had been advocating for years: maybe consciousness isn't produced by brains at all.</p>
+    <div class="tags">
+      <span class="tag">consciousness</span>
+      <span class="tag">panpsychism</span>
+      <span class="tag">wire crossing</span>
+    </div>
+    <div class="links">
+      <a href="https://www.sciencedaily.com/releases/2026/04/260406192809.htm" target="_blank" rel="noopener">ScienceDaily</a>
+      <a href="https://bigthink.com/neuropsych/consciousness-bet-25-years/" target="_blank" rel="noopener">Big Think</a>
+    </div>
+  </article>
+
+  <!-- meme -->
+  <article class="post">
+    <div class="post-type">memes</div>
+    <h2><a href="https://doubleblindmag.com/mushroom-memes/" target="_blank" rel="noopener">Mushroom Memes (DoubleBlind)</a></h2>
+    <p class="summary">Curated collection featuring the "before and after" of trying mushrooms (stick figure to fractal being), "explaining to your friend that the trees are breathing," and "me explaining to my sober friend why the carpet patterns are alive."</p>
+    <div class="tags">
+      <span class="tag">psychedelics</span>
+      <span class="tag">humor</span>
+    </div>
+  </article>
+
+  <!-- 5. Clergy psilocybin study -->
+  <article class="post">
+    <div class="post-type">reddit &rarr; Johns Hopkins</div>
+    <h2><a href="https://www.liebertpub.com/doi/10.1089/psymed.2023.0044" target="_blank" rel="noopener">They Gave Priests Mushrooms. The Priests Said It Was More Meaningful Than Most of Their Careers.</a></h2>
+    <div class="source">Psychedelic Medicine / Johns Hopkins, 2025</div>
+    <p class="summary">For years, psychedelic communities on Reddit argued that psychedelic experiences were genuinely mystical, not merely hallucinatory, and that established religious leaders would recognize them as such. The Griffiths study gave psilocybin to 29 clergy from Christian, Jewish, Muslim, and other traditions. 88% met criteria for a "complete" mystical experience. Most rated at least one session as among the top five most spiritually meaningful moments of their entire lives. Effects persisted at 16-month follow-up.</p>
+    <p class="crossover">Reddit psychonauts said "give a priest mushrooms and he'll have a religious experience"; Johns Hopkins did exactly that, and the priests agreed.</p>
+    <div class="tags">
+      <span class="tag">religion</span>
+      <span class="tag">psychedelics</span>
+      <span class="tag">wire crossing</span>
+    </div>
+    <div class="links">
+      <a href="https://www.liebertpub.com/doi/10.1089/psymed.2023.0044" target="_blank" rel="noopener">Paper</a>
+      <a href="https://numinousways.com/sacred-encounters-how-psilocybin-transformed-clergy-from-major-world-religions/" target="_blank" rel="noopener">Numinous Ways</a>
+    </div>
+  </article>
+
+  <!-- joke -->
+  <article class="post">
+    <div class="post-type">joke</div>
+    <p class="joke-text">"I spent a lot of time, money and effort childproofing my house. But the kids still get in."</p>
+  </article>
+
+  <!-- 6. Microdosing placebo demolition -->
+  <article class="post">
+    <div class="post-type">Silicon Valley &rarr; placebo</div>
+    <h2><a href="https://www.sciencedirect.com/science/article/abs/pii/S002839082500440X" target="_blank" rel="noopener">Microdosing: Tech Culture's Most Confident Self-Experiment Is a Placebo Effect</a></h2>
+    <div class="source">ScienceDirect / Nature, 2022-2026</div>
+    <p class="summary">For years, r/microdosing and Silicon Valley treated psilocybin microdosing as a proven productivity hack. Multiple double-blind, placebo-controlled studies now consistently find null effects on attention, mood, and cognition relative to placebo. A 2026 mega-analysis found only a "subtle boost in divergent quality" with no improvement in convergent thinking. Placebo effects were particularly strong among prior psychedelic users, suggesting that the microdosing culture itself was generating the perceived benefits through expectancy.</p>
+    <p class="crossover">The people most sure they were "seeing clearly" were the most susceptible to expectancy bias. Internet culture built a mythology; controlled science demolished it.</p>
+    <div class="tags">
+      <span class="tag">psychedelics</span>
+      <span class="tag">placebo</span>
+      <span class="tag">wire crossing</span>
+    </div>
+    <div class="links">
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S002839082500440X" target="_blank" rel="noopener">2026 Study</a>
+      <a href="https://www.nature.com/articles/s41398-022-02039-0" target="_blank" rel="noopener">Nature</a>
+    </div>
+  </article>
+
+  <!-- discuss -->
+  <article class="post">
+    <div class="post-type">discuss</div>
+    <p class="discuss-text">If you could homestead anywhere in the American desert with unlimited water but no internet, or keep your current life exactly as is, which would you pick?</p>
+    <p class="discuss-context">desert / lifestyle</p>
+  </article>
+
+  <!-- 7. Border wall intaglio -->
+  <article class="post">
+    <div class="post-type">news</div>
     <h2><a href="https://archaeology.org/news/2026/05/04/las-playas-intaglio-damaged-by-border-wall-construction-in-arizona/" target="_blank" rel="noopener">Border Wall Construction Bulldozes 1,000-Year-Old Sacred Desert Intaglio in Arizona</a></h2>
     <div class="source">Archaeology Magazine / The Intercept, April-May 2026</div>
     <p class="summary">DHS contractors building a second parallel border wall scraped away 60-70 feet of the Las Playas Intaglio, a 200-foot fish-shaped etching in desert pavement on Arizona's Cabeza Prieta National Wildlife Refuge, sacred to the Tohono O'odham Nation. A cultural monitor had previously flagged it as a site to avoid. DHS environmental waivers exempted the construction from laws protecting Indigenous archaeological sites.</p>
@@ -312,11 +373,72 @@
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">04</div>
+  <!-- candy -->
+  <article class="post">
+    <div class="post-type">candy</div>
+    <h3 class="candy-name"><a href="https://www.prnewswire.com/news-releases/hot-tamales-turns-up-the-flavor-with-new-tropical-heat-302762800.html" target="_blank" rel="noopener">Hot Tamales Tropical Heat</a></h3>
+    <p class="candy-desc">Three new flavors: Fiery Lime, Mango Chili, and Pineapple Picante. The lime reportedly "tastes authentic" with spice that comes on quick. Available at Walmart, Dollar Tree, Albertsons, Kroger.</p>
+  </article>
+
+  <!-- 8. AuDHD: Reddit coined the term -->
+  <article class="post">
+    <div class="post-type">reddit &rarr; DSM</div>
+    <h2><a href="https://www.jmir.org/2025/1/e70914" target="_blank" rel="noopener">Reddit Created a Clinical Concept Before the DSM Did</a></h2>
+    <div class="source">Journal of Medical Internet Research, 2025</div>
+    <p class="summary">The term "AuDHD" (autism + ADHD co-occurrence) was coined by Reddit and TikTok communities. It never appeared in any diagnostic manual. A 2025 study analyzed 10 years of Reddit data and found autism mentions in r/ADHD surged in 2021, overtaking bipolar and OCD to become the most frequently mentioned co-occurring condition. A separate study estimated roughly 45% of adults with ADHD show significant autistic traits, validating what the community had been saying for years.</p>
+    <p class="crossover">Reddit users created a diagnostic category, gave it a name, and built a community around it years before the DSM or any journal caught up; the 2025 study essentially ran the numbers and said "yeah, they were right."</p>
+    <div class="tags">
+      <span class="tag">autism</span>
+      <span class="tag">ADHD</span>
+      <span class="tag">wire crossing</span>
+    </div>
+    <div class="links">
+      <a href="https://www.jmir.org/2025/1/e70914" target="_blank" rel="noopener">JMIR</a>
+      <a href="https://www.nationalgeographic.com/health/article/what-is-audhd-adhd-autism-overlap-adults" target="_blank" rel="noopener">Nat Geo</a>
+    </div>
+  </article>
+
+  <!-- meme -->
+  <article class="post">
+    <div class="post-type">memes</div>
+    <h2><a href="https://www.boredpanda.com/funny-home-improvement-fails/" target="_blank" rel="noopener">49 Absolute Worst Home Improvement Fails</a></h2>
+    <p class="summary">Outlets installed upside down inside shower stalls. Toilets facing walls with 3 inches of clearance. Stairs that lead directly into ceilings. A door that opens into another door.</p>
+    <div class="tags">
+      <span class="tag">DIY fails</span>
+      <span class="tag">humor</span>
+    </div>
+  </article>
+
+  <!-- 9. Autistic burnout: reddit described it first -->
+  <article class="post">
+    <div class="post-type">reddit &rarr; journal</div>
+    <h2><a href="https://link.springer.com/article/10.1007/s10803-025-06765-4" target="_blank" rel="noopener">Autistic Burnout: Reddit Described a Syndrome, Researchers Used Their Posts to Prove It Was Real</a></h2>
+    <div class="source">Journal of Autism and Developmental Disorders / Springer, 2025</div>
+    <p class="summary">Autistic communities on Reddit spent years describing "autistic burnout" as a specific phenomenon: chronic exhaustion, increased sensory sensitivity, and social withdrawal caused by long-term masking. Clinicians dismissed it. A 2025 study analyzed 249 Reddit threads and confirmed three core components matching community descriptions exactly. Research also confirmed that long-term masking produces measurably higher biological stress levels.</p>
+    <p class="crossover">Autistic Reddit users described a syndrome that didn't exist in any diagnostic manual; researchers then literally used their Reddit posts as data to prove the syndrome was real.</p>
+    <div class="tags">
+      <span class="tag">autism</span>
+      <span class="tag">neuroscience</span>
+      <span class="tag">wire crossing</span>
+    </div>
+    <div class="links">
+      <a href="https://link.springer.com/article/10.1007/s10803-025-06765-4" target="_blank" rel="noopener">Springer</a>
+      <a href="https://onlinelibrary.wiley.com/doi/10.1002/aur.3129" target="_blank" rel="noopener">Wiley</a>
+    </div>
+  </article>
+
+  <!-- joke -->
+  <article class="post">
+    <div class="post-type">joke</div>
+    <p class="joke-text">"My wife told me to stop impersonating a flamingo. I had to put my foot down."</p>
+  </article>
+
+  <!-- 10. Meditation = psychedelics, without drugs -->
+  <article class="post">
+    <div class="post-type">paper &rarr; social</div>
     <h2><a href="https://www.sciencedaily.com/releases/2026/04/260406192913.htm" target="_blank" rel="noopener">Seven Days of Meditation Rewires the Brain to Resemble Psychedelic States</a></h2>
     <div class="source">Communications Biology / UC San Diego, April 2026</div>
-    <p class="summary">Twenty adults completed a 7-day residential retreat with 33 hours of guided practice. Brain scans showed reduced default mode network chatter, boosted immune signaling, increased natural pain-relief chemicals. The striking finding: participants who reported stronger mystical experiences showed brain states resembling those seen under psychedelics. The convergence between meditation-induced and psychedelic-induced brain states, achieved entirely without drugs.</p>
+    <p class="summary">Twenty adults completed a 7-day residential retreat with 33 hours of guided practice. Brain scans showed reduced default mode network chatter, boosted immune signaling, increased natural pain-relief chemicals. Participants who reported stronger mystical experiences showed brain states resembling those seen under psychedelics. The convergence between meditation-induced and psychedelic-induced brain states, achieved entirely without drugs.</p>
     <div class="tags">
       <span class="tag">meditation</span>
       <span class="tag">neuroscience</span>
@@ -328,41 +450,72 @@
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">05</div>
-    <h2><a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202511780" target="_blank" rel="noopener">Virtual Trial Simulates Psychedelics for Patients with Disorders of Consciousness</a></h2>
-    <div class="source">Advanced Science / Wiley, 2026</div>
-    <p class="summary">Computational simulations of LSD and psilocybin in vegetative and minimally conscious patients showed psychedelics shifted brain activity toward "criticality," the edge-of-chaos state associated with healthy conscious processing. The effect was stronger in minimally conscious patients. This opens the idea that psychedelics might literally reboot consciousness in brain-injured patients. Not yet tested in humans, but the theoretical framework is compelling.</p>
+  <!-- discuss -->
+  <article class="post">
+    <div class="post-type">discuss</div>
+    <p class="discuss-text">Would you rather your kids grow up to be deeply kind but professionally unremarkable, or wildly successful but kind of cold?</p>
+    <p class="discuss-context">parenting / values</p>
+  </article>
+
+  <!-- 11. AAP screen time reversal -->
+  <article class="post">
+    <div class="post-type">reddit &rarr; AAP</div>
+    <h2><a href="https://www.edsurge.com/news/2026-02-05-new-aap-screen-time-recommendations-focus-less-on-screens-more-on-family-time" target="_blank" rel="noopener">AAP Screen Time Reversal: Reddit Parents Were Right All Along</a></h2>
+    <div class="source">EdSurge / AAP, January 2026</div>
+    <p class="summary">For years, the AAP enforced strict "no more than 2 hours of screen time" guidelines. Parents on r/Parenting and r/ScienceBasedParenting pushed back relentlessly, arguing that FaceTiming grandparents, building in Minecraft, and watching random YouTube are fundamentally different activities. In January 2026, the AAP reversed course, dropping strict hour limits and shifting to a framework based on content quality, context, and family connection.</p>
+    <p class="crossover">The American Academy of Pediatrics spent a decade telling parents to count minutes; Reddit parents spent a decade saying that was stupid; the AAP quietly agreed.</p>
     <div class="tags">
-      <span class="tag">psychedelics</span>
-      <span class="tag">consciousness</span>
-      <span class="tag">neuroscience</span>
+      <span class="tag">parenting</span>
+      <span class="tag">screen time</span>
+      <span class="tag">wire crossing</span>
     </div>
     <div class="links">
-      <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202511780" target="_blank" rel="noopener">Advanced Science</a>
+      <a href="https://www.edsurge.com/news/2026-02-05-new-aap-screen-time-recommendations-focus-less-on-screens-more-on-family-time" target="_blank" rel="noopener">EdSurge</a>
+      <a href="https://health.choc.org/updated-aap-recommendations-for-screen-time/" target="_blank" rel="noopener">CHOC</a>
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">06</div>
-    <h2><a href="https://thehill.com/newsletters/the-movement/5660450-the-movement-strife-conservatives-2026/" target="_blank" rel="noopener">The Conservative Civil War: Heritage Foundation Exodus Sets Stage for 2026 Midterms</a></h2>
-    <div class="source">The Hill / CNN, late 2025 - early 2026</div>
-    <p class="summary">More than a dozen Heritage Foundation staffers left to join a group founded by Mike Pence, after Heritage president Kevin Roberts pushed the institution in a more populist, MAGA-aligned direction. The breaking point came when Roberts defended Tucker Carlson's interview with Nick Fuentes. An open factional war between traditional conservatives and New Right populists over who defines the post-Trump GOP, with 2026 midterms as the first real electoral test.</p>
+  <!-- meme -->
+  <article class="post">
+    <div class="post-type">memes</div>
+    <h2><a href="https://zillowgonewild.com/" target="_blank" rel="noopener">Zillow Gone Wild</a></h2>
+    <p class="summary">The 1.8M-follower account (now an HGTV show). Highlights include a $650K Lake Tahoe duplex filled with posed mannequins in ballgowns, a $2.2M New Jersey mansion with 81 wreaths, 30 Christmas trees, 238 angels, and 115 religious statues.</p>
     <div class="tags">
-      <span class="tag">politics</span>
-      <span class="tag">conservatism</span>
-      <span class="tag">gop</span>
-    </div>
-    <div class="links">
-      <a href="https://thehill.com/newsletters/the-movement/5660450-the-movement-strife-conservatives-2026/" target="_blank" rel="noopener">The Hill</a>
+      <span class="tag">real estate</span>
+      <span class="tag">absurd</span>
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">07</div>
+  <!-- 12. Tartaria -->
+  <article class="post">
+    <div class="post-type">4chan &rarr; architecture</div>
+    <h2><a href="https://www.bloomberg.com/news/features/2021-04-27/inside-architecture-s-wildest-conspiracy-theory" target="_blank" rel="noopener">Tartaria: The Conspiracy Theory That Accidentally Got People Into Real Architectural History</a></h2>
+    <div class="source">Bloomberg / Discover Magazine</div>
+    <p class="summary">The Tartaria/mud flood conspiracy, which originated in Russian pseudohistory and spread through 4chan and Reddit, claims ornate pre-modern buildings were built by a lost advanced civilization. The theory is comprehensively debunked. But it has had a genuine side effect: it got a generation of internet users interested in real architectural history, preservation, and the real reasons why 19th-century buildings look so different from modern ones.</p>
+    <p class="crossover">Tartaria believers are wrong about literally everything, but "why did we stop building beautiful buildings?" is a real question that serious architects struggle with, making this the rare conspiracy theory that's more interesting for what it reveals about the conspiracists than about the conspiracy.</p>
+    <div class="tags">
+      <span class="tag">architecture</span>
+      <span class="tag">conspiracy</span>
+      <span class="tag">wire crossing</span>
+    </div>
+    <div class="links">
+      <a href="https://www.bloomberg.com/news/features/2021-04-27/inside-architecture-s-wildest-conspiracy-theory" target="_blank" rel="noopener">Bloomberg</a>
+      <a href="https://www.discovermagazine.com/what-is-the-lost-empire-of-tartaria-45702" target="_blank" rel="noopener">Discover</a>
+    </div>
+  </article>
+
+  <!-- joke -->
+  <article class="post">
+    <div class="post-type">joke</div>
+    <p class="joke-text">"My wife said I never listen to her. At least, I think that's what she said."</p>
+  </article>
+
+  <!-- 13. Seattle housing -->
+  <article class="post">
+    <div class="post-type">market data</div>
     <h2><a href="https://www.themadronagroup.com/seattle-housing-market-report/" target="_blank" rel="noopener">Seattle Housing: First Time in a Decade That Income Growth Outpaces Home Prices</a></h2>
     <div class="source">The Madrona Group / KIRO 7 / Zillow, May 2026</div>
-    <p class="summary">For the first time in over a decade, income growth in Seattle is expected to outpace home price growth. Active listings in Washington state are up 28% year over year, inventory expanded sharply in May, and mortgage rates are drifting toward the low-6% range. Most forecasts project 2-5% metro-wide appreciation with wide neighborhood variation. The shift from a supply-starved frenzy to a balanced market is the most consequential local change in years.</p>
+    <p class="summary">Active listings in Washington state are up 28% year over year, inventory expanded sharply in May, and mortgage rates are drifting toward the low-6% range. Most forecasts project 2-5% metro-wide appreciation with wide neighborhood variation. The shift from a supply-starved frenzy to a balanced market is the most consequential local change in years.</p>
     <div class="tags">
       <span class="tag">real estate</span>
       <span class="tag">seattle</span>
@@ -374,11 +527,19 @@
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">08</div>
+  <!-- candy -->
+  <article class="post">
+    <div class="post-type">candy</div>
+    <h3 class="candy-name"><a href="https://livejapan.com/en/in-tokyo/in-pref-tokyo/in-shibuya/article-a0005326/" target="_blank" rel="noopener">Japan's 2026 Matcha Snack Lineup</a></h3>
+    <p class="candy-desc">Don Quijote stores have rolled out matcha gummies, matcha potato chips, matcha candies, Hi-Chocolat Truffles in Earl Grey and matcha, and Mount Fuji-themed Alfort chocolate biscuits stamped with a Fuji design.</p>
+  </article>
+
+  <!-- 14. Tariffs + renovation -->
+  <article class="post">
+    <div class="post-type">news</div>
     <h2><a href="https://www.brookings.edu/articles/recent-tariffs-threaten-residential-construction/" target="_blank" rel="noopener">Tariffs Are Adding $10,000+ to Typical Home Renovation Projects</a></h2>
     <div class="source">Brookings / NAHB / CBS News, 2026</div>
-    <p class="summary">The 2025-2026 tariff regime hits homeowners hard: 25% on kitchen cabinets and vanities (rising to 50%), 10% on softwood lumber, 25% on upholstered wood products. NAHB estimates current tariffs add roughly $10,900 per new home. A gut kitchen renovation now hits tariffs on cabinets, appliances, copper plumbing, steel framing, and lumber simultaneously. The practical question: act now before rates climb further, or wait for possible rollbacks.</p>
+    <p class="summary">25% on kitchen cabinets (rising to 50%), 10% on softwood lumber, 25% on upholstered wood products. NAHB estimates current tariffs add roughly $10,900 per new home. A gut kitchen renovation now hits tariffs on cabinets, appliances, copper plumbing, steel framing, and lumber simultaneously. The practical question: act now or wait for possible rollbacks.</p>
     <div class="tags">
       <span class="tag">renovation</span>
       <span class="tag">tariffs</span>
@@ -390,11 +551,19 @@
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">09</div>
+  <!-- discuss -->
+  <article class="post">
+    <div class="post-type">discuss</div>
+    <p class="discuss-text">If money were no object, would you rather renovate a bizarre existing structure (converted water tower, old church, decommissioned fire station) or build something conventional from scratch on perfect land?</p>
+    <p class="discuss-context">real estate / DIY</p>
+  </article>
+
+  <!-- 15. Autism + Parkinson's -->
+  <article class="post">
+    <div class="post-type">paper</div>
     <h2><a href="https://health.ucdavis.edu/news/headlines/autism-research-in-2026-strong-and-diverse-despite-funding-uncertainty/2026/05" target="_blank" rel="noopener">Adults with Autism Show Parkinson's-Like Brain Abnormalities</a></h2>
     <div class="source">UC Davis MIND Institute, May 2026</div>
-    <p class="summary">Brain imaging reveals young adults with autism show scan abnormalities typically associated with Parkinson's disease, opening an unexpected connection and a potential path toward early prevention. Separately, researchers found the MDGA1 gene mutation causes autism primarily in males, while females are protected by estrogen, which may explain the long-observed gender disparity in autism diagnosis. The Parkinson's-like finding suggests monitoring and intervention strategies could be borrowed from Parkinson's research.</p>
+    <p class="summary">Brain imaging reveals young adults with autism show scan abnormalities typically associated with Parkinson's disease, opening an unexpected connection and a potential path toward early prevention. Separately, researchers found the MDGA1 gene mutation causes autism primarily in males, while females are protected by estrogen, which may explain the long-observed gender disparity in diagnosis.</p>
     <div class="tags">
       <span class="tag">autism</span>
       <span class="tag">neuroscience</span>
@@ -405,11 +574,23 @@
     </div>
   </article>
 
-  <article class="item">
-    <div class="item-number">10</div>
+  <!-- meme -->
+  <article class="post">
+    <div class="post-type">memes</div>
+    <h2><a href="https://www.boredpanda.com/funny-philosophy-memes/" target="_blank" rel="noopener">89 Deep and Funny Philosophy Memes</a></h2>
+    <p class="summary">"Might either cure your existential crisis or make it worse." Includes "Is this a pigeon?" repurposed for epistemology, Plato's cave as a movie theater, and Descartes: "I think, therefore I am" / his friend: "I drink, therefore I am... at the bar."</p>
+    <div class="tags">
+      <span class="tag">philosophy</span>
+      <span class="tag">consciousness</span>
+    </div>
+  </article>
+
+  <!-- 16. Off-grid desert -->
+  <article class="post">
+    <div class="post-type">news</div>
     <h2><a href="https://landlimited.com/blogs/off-grid-living-on-raw-land-2026-real-costs-hidden-risks-success-stories" target="_blank" rel="noopener">Off-Grid Desert Homesteading in 2026: More Achievable Than Ever</a></h2>
     <div class="source">Land Limited, 2026</div>
-    <p class="summary">With advances in affordable solar batteries and efficient water harvesting, the economics of off-grid desert living have shifted meaningfully. Starter homesteads of 5-40 acres in New Mexico or Utah run $1,000-$5,000 per acre. Success stories include a 30-acre Arizona homestead running entirely on solar and rainwater. However, the biggest hidden cost is water: "cheap desert land is not cheap if drilling a well is brutal or hauling water becomes a full-time hobby."</p>
+    <p class="summary">With advances in affordable solar batteries and efficient water harvesting, the economics of off-grid desert living have shifted. Starter homesteads of 5-40 acres in New Mexico or Utah run $1,000-$5,000 per acre. Success stories include a 30-acre Arizona homestead running entirely on solar and rainwater. The biggest hidden cost is water: "cheap desert land is not cheap if drilling a well is brutal or hauling water becomes a full-time hobby."</p>
     <div class="tags">
       <span class="tag">desert</span>
       <span class="tag">homesteading</span>
@@ -421,112 +602,27 @@
     </div>
   </article>
 
-  <div class="section-break"><h2>Discuss</h2></div>
-
-  <div class="discuss">
-    <p>Would you rather live in a reality entirely of your own making but stay completely isolated, or live in a shared, uncertain reality full of connection and unpredictability?</p>
-    <div class="context">consciousness / philosophy</div>
-  </div>
-
-  <div class="discuss">
-    <p>If you could homestead anywhere in the American desert with unlimited water but no internet, or keep your current life exactly as is, which would you pick?</p>
-    <div class="context">desert / lifestyle</div>
-  </div>
-
-  <div class="discuss">
-    <p>Would you rather your kids grow up to be deeply kind but professionally unremarkable, or wildly successful but kind of cold?</p>
-    <div class="context">parenting / values</div>
-  </div>
-
-  <div class="discuss">
-    <p>If money were no object, would you rather renovate a bizarre existing structure (converted water tower, old church, decommissioned fire station) or build something conventional from scratch on perfect land?</p>
-    <div class="context">real estate / DIY</div>
-  </div>
-
-  <div class="section-break"><h2>Jokes</h2></div>
-
-  <div class="joke">
-    <p>"I told my boss I needed a raise because three companies were after me. He asked which ones. I said, 'The electric company, the gas company, and the internet provider.'"</p>
-  </div>
-
-  <div class="joke">
-    <p>"My wife told me to stop impersonating a flamingo. I had to put my foot down."</p>
-  </div>
-
-  <div class="joke">
-    <p>"I spent a lot of time, money and effort childproofing my house. But the kids still get in."</p>
-  </div>
-
-  <div class="joke">
-    <p>"My wife said I never listen to her. At least, I think that's what she said."</p>
-  </div>
-
-  <div class="section-break"><h2>Candy</h2></div>
-
-  <div class="candy">
-    <h3><a href="https://www.theomnicosm.com/m-ms-popd-are-the-greatest-freeze-dried-candy-ive-ever-eaten/" target="_blank" rel="noopener">M&amp;M's POP'd Caramel (Freeze-Dried)</a></h3>
-    <p>The first freeze-dried candy from M&amp;M's. Light, crispy, airy, with grainy centers that dissolve in your mouth. Reviewers say Mars got the format right on the first try, and caramel was the perfect flavor to freeze-dry.</p>
+  <!-- 17. Conservative civil war -->
+  <article class="post">
+    <div class="post-type">politics</div>
+    <h2><a href="https://thehill.com/newsletters/the-movement/5660450-the-movement-strife-conservatives-2026/" target="_blank" rel="noopener">The Conservative Civil War: Heritage Foundation Exodus Sets Stage for 2026 Midterms</a></h2>
+    <div class="source">The Hill / CNN, late 2025 - early 2026</div>
+    <p class="summary">More than a dozen Heritage Foundation staffers left to join a group founded by Mike Pence, after Heritage president Kevin Roberts pushed in a more populist, MAGA-aligned direction. The breaking point came when Roberts defended Tucker Carlson's interview with Nick Fuentes. An open factional war between traditional conservatives and New Right populists over who defines the post-Trump GOP, with 2026 midterms as the first real test.</p>
     <div class="tags">
-      <span class="tag">new release</span>
-      <span class="tag">freeze-dried</span>
+      <span class="tag">politics</span>
+      <span class="tag">conservatism</span>
+      <span class="tag">GOP</span>
     </div>
-  </div>
-
-  <div class="candy">
-    <h3><a href="https://www.prnewswire.com/news-releases/hot-tamales-turns-up-the-flavor-with-new-tropical-heat-302762800.html" target="_blank" rel="noopener">Hot Tamales Tropical Heat</a></h3>
-    <p>Three new flavors: Fiery Lime, Mango Chili, and Pineapple Picante. A fusion of tropical fruit and bold heat. The lime reportedly "tastes authentic" with spice that comes on quick.</p>
-    <div class="tags">
-      <span class="tag">new release</span>
-      <span class="tag">spicy</span>
+    <div class="links">
+      <a href="https://thehill.com/newsletters/the-movement/5660450-the-movement-strife-conservatives-2026/" target="_blank" rel="noopener">The Hill</a>
     </div>
-  </div>
+  </article>
 
-  <div class="candy">
-    <h3><a href="https://livejapan.com/en/in-tokyo/in-pref-tokyo/in-shibuya/article-a0005326/" target="_blank" rel="noopener">Japan's 2026 Matcha Snack Lineup</a></h3>
-    <p>Don Quijote stores have rolled out matcha gummies, matcha potato chips, matcha candies, Hi-Chocolat Truffles in Earl Grey and matcha, and Mount Fuji-themed Alfort chocolate biscuits.</p>
-    <div class="tags">
-      <span class="tag">Japanese</span>
-      <span class="tag">matcha</span>
-    </div>
-  </div>
-
-  <div class="section-break"><h2>Memes</h2></div>
-
-  <div class="meme">
-    <h3><a href="https://doubleblindmag.com/mushroom-memes/" target="_blank" rel="noopener">Mushroom Memes (DoubleBlind)</a></h3>
-    <p>Curated collection featuring the "before and after" of trying mushrooms (stick figure to fractal being), "explaining to your friend that the trees are breathing," and "me explaining to my sober friend why the carpet patterns are alive."</p>
-    <div class="tags">
-      <span class="tag">psychedelics</span>
-      <span class="tag">humor</span>
-    </div>
-  </div>
-
-  <div class="meme">
-    <h3><a href="https://www.boredpanda.com/funny-home-improvement-fails/" target="_blank" rel="noopener">49 Absolute Worst Home Improvement Fails</a></h3>
-    <p>Outlets installed upside down inside shower stalls. Toilets facing walls with 3 inches of clearance. Stairs that lead directly into ceilings. A door that opens into another door.</p>
-    <div class="tags">
-      <span class="tag">DIY fails</span>
-      <span class="tag">humor</span>
-    </div>
-  </div>
-
-  <div class="meme">
-    <h3><a href="https://zillowgonewild.com/" target="_blank" rel="noopener">Zillow Gone Wild</a></h3>
-    <p>The 1.8M-follower account (now an HGTV show). Highlights include a $650K Lake Tahoe duplex filled with posed mannequins in ballgowns, a $2.2M New Jersey mansion with 81 wreaths, 30 Christmas trees, 238 angels, and 115 religious statues.</p>
-    <div class="tags">
-      <span class="tag">real estate</span>
-      <span class="tag">absurd</span>
-    </div>
-  </div>
-
-  <div class="meme">
-    <h3><a href="https://www.boredpanda.com/funny-philosophy-memes/" target="_blank" rel="noopener">89 Deep and Funny Philosophy Memes</a></h3>
-    <p>"Might either cure your existential crisis or make it worse." Includes "Is this a pigeon?" repurposed for epistemology, Plato's cave as a movie theater, and Descartes: "I think, therefore I am" / his friend: "I drink, therefore I am... at the bar."</p>
-    <div class="tags">
-      <span class="tag">philosophy</span>
-      <span class="tag">consciousness</span>
-    </div>
-  </div>
+  <!-- final joke -->
+  <article class="post">
+    <div class="post-type">joke</div>
+    <p class="joke-text">"I told my wife she was drawing her eyebrows too high. She looked surprised."</p>
+  </article>
 
 </main>
 
